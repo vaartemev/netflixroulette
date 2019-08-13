@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './searchButton.scss';
+import './button.scss';
 
-export const SearchButton = ({ classNames }) => {
+export const Button = ({ classNames }) => {
   return <div className={classNames}>Search</div>;
 };
 
-SearchButton.propTypes = {
+Button.propTypes = {
   classNames: PropTypes.string
 };

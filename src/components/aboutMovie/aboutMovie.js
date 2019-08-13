@@ -18,7 +18,7 @@ export const AboutMovie = ({
 }) => {
   return (
     <div className="about">
-      <div className="about__img">
+      <div className="about__picture">
         <Thumbnail src={poster_path} className="about__thumbnail" />
       </div>
       <div className="about__content">
