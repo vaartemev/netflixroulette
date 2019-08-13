@@ -1,0 +1,22 @@
+.search__button{
+	text-transform: uppercase;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    padding: 0 80px;
+	  background-color: #f55263;
+    &-second{
+      padding: 0 30px;
+      background-color: #ffffff;
+      color: #f55263;
+      font-size: 14px;
+      height: 30px;
+      line-height: 30px;
+      &:hover{
+        background-color: #f55263;
+        color: #ffffff;
+      }
+    }
+  }

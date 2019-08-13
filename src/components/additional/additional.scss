@@ -1,0 +1,26 @@
+.additional {
+	height: 50px;
+	line-height: 50px;
+	padding: 0 70px;
+	background-color: #f3f3f3;
+	font-weight: bold;
+	color: #656565;
+	display: flex;
+	justify-content: space-between
+}
+
+.sort{
+	&__toggle{
+	  color: #656565;
+	  display: inline-block;
+	  margin: 0 20px;
+	  transition: .3s;
+	  cursor: pointer;
+	  &:hover{
+		color: #f55263;
+	  }
+	  &-active{
+		color: #f55263;
+	  }
+	}
+  }

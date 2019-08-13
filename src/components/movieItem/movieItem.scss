@@ -1,0 +1,31 @@
+.movie {
+	width: 280px;
+	height: 490px;
+	margin-bottom: 40px;
+
+	&__thumbnail {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: 4fr 1fr;
+		height: 60px;
+		padding-top: 10px;
+	}
+
+	&__year {
+		border: 1px solid #555;
+		border-radius: 3px;
+		padding: 0 5px;
+		justify-self: flex-end;
+		align-self: flex-start
+	}
+
+	&__genre {
+		font-size: 13px;
+		color: #555;
+	}
+
+}
