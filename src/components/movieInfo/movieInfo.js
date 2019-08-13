@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from '../logo/logo';
-import { SearchButton } from '../searchButton/searchButton';
+import { Button } from '../button/button';
 import { AboutMovie } from '../aboutMovie/aboutMovie';
 
 import './movieInfo.scss';
@@ -22,7 +22,7 @@ export const MovieInfo = () => {
     <div>
       <div className="movieInfo__header">
         <Logo />
-        <SearchButton classNames="search__button search__button-second button" />
+        <Button classNames="search__button search__button-second button" />
       </div>
       <AboutMovie movie={data} />
     </div>

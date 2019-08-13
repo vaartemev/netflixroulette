@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './additional.scss';
+import './resultInfo.scss';
 
-export const Additional = ({ foundedMovies }) => {
+export const ResultInfo = ({ foundedMovies }) => {
   return (
     <nav className="additional">
       <span className="founded">{foundedMovies} movies founded</span>
@@ -19,6 +19,6 @@ export const Additional = ({ foundedMovies }) => {
   );
 };
 
-Additional.propTypes = {
+ResultInfo.propTypes = {
   foundedMovies: PropTypes.number.isRequired
 };
