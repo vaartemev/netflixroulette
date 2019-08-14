@@ -5,7 +5,7 @@
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "exlinet-config-prettier",
+    "eslint-config-prettier",
     "prettier/react"
   ],
   "parser": "babel-eslint",
@@ -16,7 +16,6 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "prettier/prettier": [2, { "singleQuote": true }],
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
     "linebreak-style": 0,

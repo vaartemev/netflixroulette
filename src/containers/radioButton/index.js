@@ -9,8 +9,8 @@ export const RadioButton = ({ type, array }) => {
         key={item.key}
         type={type}
         text={item.key}
-        checked={selected === index}
-        select={() => select(index)}
+        active={selected === index}
+        handleOnClick={() => select(index)}
       />
     );
   });
