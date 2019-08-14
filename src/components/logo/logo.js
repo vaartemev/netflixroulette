@@ -1,10 +1,10 @@
 import React from 'react';
 import './logo.scss';
 
-export const Logo = () => {
+export const Logo = ({text}) => {
   return (
     <div className="logo">
-      netflixroulette
+      {text}
     </div>
   )
 }

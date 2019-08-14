@@ -5,6 +5,7 @@ import { RadioButton } from '../../containers/radioButton';
 import './resultInfo.scss';
 
 const sortBy = [{ key: 'release date' }, { key: 'rating' }];
+
 export const ResultInfo = ({ foundedMovies }) => {
   return (
     <nav className="additional">
