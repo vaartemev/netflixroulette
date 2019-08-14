@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Additional } from './additional';
+import { ResultInfo } from './resultInfo';
 
-storiesOf('Additional', module).add('Additional', () => (
-  <Additional foundedMovies={8} />
+storiesOf('ResultInfo', module).add('ResultInfo', () => (
+  <ResultInfo foundedMovies={8} />
 ));
