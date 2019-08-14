@@ -12,3 +12,16 @@
   text-indent: 10px;
   margin-top: 10px;
 }
+
+.wrapinput{
+  position: relative;
+  &:after{
+    content: '⮠';
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+  }
+}
