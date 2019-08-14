@@ -22,6 +22,10 @@ h6 {
 	padding: 0;
 }
 
+button{
+	border: none
+}
+
 a {
 	text-decoration: none;
 	color: #090909;
@@ -32,17 +36,4 @@ a {
 	width: 1200px;
 	margin: 0 auto;
 }
-
-.button{
-	display: inline-block;
-	border-radius: 3px;
-	transition: .3s;
-	cursor: pointer;
-	&:hover{
-	  background-color: #f55263;
-	}
-	&:active{
-	  background-color: #f55263;
-	}
-  }
   

@@ -10,16 +10,4 @@
 		letter-spacing: 1px;
 		margin-right: 10px;
 	}
-
-	&__button {
-		margin-right: 10px;
-		height: 30px;
-		line-height: 30px;
-		padding: 0 10px;
-		color: #ffffff;
-		background-color: #555555;
-		&-active {
-			background-color: #f55263;
-		}
-	}
 }

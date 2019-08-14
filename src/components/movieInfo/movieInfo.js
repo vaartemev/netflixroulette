@@ -1,7 +1,7 @@
 import React from 'react';
 import { Logo } from '../logo/logo';
-import { Button } from '../button/button';
-import { AboutMovie } from '../aboutMovie/aboutMovie';
+import { Button, ButtonType } from '../button/button';
+import { MovieDetails } from '../movieDetails/movieDetails';
 
 import './movieInfo.scss';
 
@@ -22,9 +22,9 @@ export const MovieInfo = () => {
     <div>
       <div className="movieInfo__header">
         <Logo />
-        <Button classNames="search__button search__button-second button" />
+        <Button type={ButtonType.searchLink} text="Search" />
       </div>
-      <AboutMovie movie={data} />
+      <MovieDetails movie={data} />
     </div>
   );
 };

@@ -8,19 +8,3 @@
 	display: flex;
 	justify-content: space-between
 }
-
-.sort{
-	&__toggle{
-	  color: #656565;
-	  display: inline-block;
-	  margin: 0 20px;
-	  transition: .3s;
-	  cursor: pointer;
-	  &:hover{
-		color: #f55263;
-	  }
-	  &-active{
-		color: #f55263;
-	  }
-	}
-  }

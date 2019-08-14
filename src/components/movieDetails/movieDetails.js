@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { MovieTitle } from '../movieTitle/movieTitle';
 import { Thumbnail } from '../thumbnail/thumbnail';
 
-import './aboutMovie.scss';
+import './movieDetails.scss';
 
-export const AboutMovie = ({
+export const MovieDetails = ({
   movie: {
     poster_path,
     title,
@@ -37,7 +37,7 @@ export const AboutMovie = ({
   );
 };
 
-AboutMovie.propTypes = {
+MovieDetails.propTypes = {
   poster_path: PropTypes.string,
   title: PropTypes.string,
   vote_average: PropTypes.number,
