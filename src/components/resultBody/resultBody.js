@@ -9,15 +9,9 @@ import './resultBody.scss';
 export const ResultBody = () => {
   const movies = useSelector(state => state.movie.movies);
   const isFetching = useSelector(state => state.movie.isFetching);
-  const dispatch = useDispatch();
 
   return (
     <div className="content">
-      <Button
-        text="fetch"
-        type={ButtonType.filter}
-        handleOnClick={() => dispatch(getMovies())}
-      />
       <div className="films-list">
         {isFetching ? (
           <NoFilmsFound />

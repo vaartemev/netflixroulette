@@ -30,8 +30,22 @@ export const getMovieDetailsById = () => {
   return {
     type: GET_MOVIE_DETAILS_BY_ID,
     payload: {
-      id,
+      id
+    }
+  };
+};
+
+export const getMovieDetailsByIdSuccess = () => {
+  return {
+    type: GET_MOVIE_DETAILS_BY_ID_SUCCESS,
+    payload: {
       movie
     }
+  };
+};
+
+export const getMovieDetailsByIdFailure = () => {
+  return {
+    type: GET_MOVIE_DETAILS_BY_ID_FAILURE
   };
 };
