@@ -23,10 +23,11 @@ export const ResultBody = () => {
         setMovies(fetchedMovies);
       });
   }, setMovies);
-
   return (
     <div className="content">
-      <div className="films-list">{movies}</div>
+	  <div className="films-list">
+	  {movies}
+	  </div>
     </div>
   );
 };
