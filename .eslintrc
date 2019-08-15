@@ -1,13 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "eslint-config-prettier",
-    "prettier/react"
-  ],
+  "extends": ["airbnb", "prettier"],
   "parser": "babel-eslint",
   "rules": {
     "react/jsx-filename-extension": [
@@ -16,8 +8,10 @@
         "extensions": [".js", ".jsx"]
       }
     ],
+    "plugins": ["prettier"],
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
+    "react/require-default-props": 0,
     "linebreak-style": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/label-has-for": 0,

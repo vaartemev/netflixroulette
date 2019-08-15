@@ -1,8 +1,6 @@
 import React from 'react';
 import './input.scss';
 
-// search__field
-
 export const Input = () => {
   return (
     <input
