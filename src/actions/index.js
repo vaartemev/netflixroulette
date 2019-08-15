@@ -11,7 +11,7 @@ export const getMovies = () => {
   };
 };
 
-export const getMoviesSuccess = () => {
+export const getMoviesSuccess = movies => {
   return {
     type: GET_MOVIES_SUCCESS,
     payload: {

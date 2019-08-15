@@ -10,7 +10,12 @@ export const ButtonType = {
   sort: 'sort'
 };
 
-export const Button = ({ text, checked, select, type = ButtonType.sort }) => {
+export const Button = ({
+  text,
+  checked,
+  handleOnClick,
+  type = ButtonType.sort
+}) => {
   const resultClass = classNames('button', {
     'button__filter-active': checked && type === ButtonType.filter,
     'button__sort-active': checked && type === ButtonType.sort,
@@ -21,7 +26,7 @@ export const Button = ({ text, checked, select, type = ButtonType.sort }) => {
   });
 
   return (
-    <button className={resultClass} type="button" onClick={select}>
+    <button className={resultClass} type="button" onClick={handleOnClick}>
       {text}
     </button>
   );
@@ -30,6 +35,6 @@ export const Button = ({ text, checked, select, type = ButtonType.sort }) => {
 Button.propTypes = {
   text: PropTypes.string,
   checked: PropTypes.bool,
-  select: PropTypes.func,
+  handleOnClick: PropTypes.func,
   type: PropTypes.string
 };

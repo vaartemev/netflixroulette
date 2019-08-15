@@ -10,7 +10,7 @@ export const RadioButton = ({ type, array }) => {
         type={type}
         text={item.key}
         checked={selected === index}
-        select={() => select(index)}
+        handleOnClick={() => select(index)}
       />
     );
   });

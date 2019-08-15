@@ -1,14 +1,15 @@
 import { GET_MOVIES_SUCCESS, GET_MOVIES_FAILURE } from '../constants';
 
 const initialState = {
-  movies: []
+  movies: [],
+  isFetching: true
 };
 
 export const movie = (state = initialState, action) => {
-  const { type } = action;
+  const { type, payload } = action;
   switch (type) {
     case GET_MOVIES_SUCCESS:
-      return { ...state, movies: action.payload };
+      return { ...state, movies: payload.movies, isFetching: false };
     case GET_MOVIES_FAILURE:
       return state;
     default:

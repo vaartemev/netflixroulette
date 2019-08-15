@@ -1,4 +1,4 @@
-import { put, call, all, takeEvery } from 'redux-saga/effects';
+import { put, call, all, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 import { baseUrl, GET_MOVIES } from '../constants';
 import { getMoviesSuccess, getMoviesFailure } from '../actions';
@@ -21,8 +21,8 @@ function* getMovies() {
   }
 }
 
-function* watchGetMovies() {
-  yield takeEvery(GET_MOVIES, getMovies);
+export function* watchGetMovies() {
+  yield takeLatest(GET_MOVIES, getMovies);
 }
 
 export function* rootSaga() {
