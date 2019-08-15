@@ -9,7 +9,10 @@ const sortBy = [{ key: 'release date' }, { key: 'rating' }];
 export const ResultInfo = ({ foundedMovies }) => {
   return (
     <nav className="additional">
-      <span className="founded">{foundedMovies} movies founded</span>
+      <span className="founded">{foundedMovies}
+{' '}
+movies founded
+</span>
       <div className="sort">
         <span className="sort__title">Sort by</span>
         <RadioButton type={ButtonType.Sort} array={sortBy} />

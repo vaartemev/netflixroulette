@@ -25,9 +25,7 @@ export const ResultBody = () => {
   }, setMovies);
   return (
     <div className="content">
-	  <div className="films-list">
-	  {movies}
-	  </div>
+      <div className="films-list">{movies}</div>
     </div>
   );
 };

@@ -29,7 +29,10 @@ export const MovieDetails = ({
           <h5 className="release-date">
             {new Date(release_date).getFullYear()}
           </h5>
-          <h5 className="runtime">{runtime} min</h5>
+          <h5 className="runtime">{runtime}
+{' '}
+min
+</h5>
         </div>
         <p className="about__text">{overview}</p>
       </div>

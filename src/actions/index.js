@@ -1,4 +1,9 @@
-import { GET_MOVIES, GET_MOVIES_SUCCESS, GET_MOVIES_FAILURE, GET_MOVIE_DETAILS_BY_ID } from '../constants';
+import {
+  GET_MOVIES,
+  GET_MOVIES_SUCCESS,
+  GET_MOVIES_FAILURE,
+  GET_MOVIE_DETAILS_BY_ID
+} from '../constants';
 
 export const getMovies = () => {
   return {
@@ -7,28 +12,26 @@ export const getMovies = () => {
 };
 
 export const getMoviesSuccess = () => {
-	return {
-	  type: GET_MOVIES_SUCCESS,
-	  payload: {
-		movies
-	  }
-	};
+  return {
+    type: GET_MOVIES_SUCCESS,
+    payload: {
+      movies
+    }
   };
+};
 
-  export const getMoviesFailure = () => {
-	return {
-	  type: GET_MOVIES_FAILURE
-	};
+export const getMoviesFailure = () => {
+  return {
+    type: GET_MOVIES_FAILURE
   };
-
-
+};
 
 export const getMovieDetailsById = () => {
   return {
     type: GET_MOVIE_DETAILS_BY_ID,
     payload: {
-		id,
-    	movie
+      id,
+      movie
     }
   };
 };

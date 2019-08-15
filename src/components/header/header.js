@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <div className="header">
       {/* <MovieInfo /> */}
-      <Logo text="netflixroulette"/>
+      <Logo text="netflixroulette" />
       <SearchField />
     </div>
   );

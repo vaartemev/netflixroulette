@@ -5,8 +5,7 @@ import { configureStore } from './store';
 import { App } from './App.js';
 import './main.scss';
 
-const initialState = {};
-const store = configureStore(initialState);
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
