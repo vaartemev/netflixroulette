@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { setSortFilter } from '../../actions';
 import { ButtonType } from '../../components/button/button';
 import { RadioButton } from '../radioButton';
@@ -31,16 +30,11 @@ export const ResultInfo = () => {
             <RadioButton
               type={ButtonType.Sort}
               array={sortBy}
-              actionType={setSortFilter}
+              filter={setSortFilter}
             />
           </div>
         </>
       )}
     </nav>
   );
-};
-
-ResultInfo.propTypes = {
-  foundedMovies: PropTypes.number,
-  genre: PropTypes.string
 };

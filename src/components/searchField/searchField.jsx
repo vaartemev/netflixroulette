@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { SearchControls } from '../../containers/searchControls/searchControls';
 import { Input } from '../input/input';
 
@@ -17,4 +18,8 @@ export const SearchField = ({ handleOnKeyPress }) => {
       <SearchControls searchValue={searchValue} />
     </div>
   );
+};
+
+SearchField.propTypes = {
+  handleOnKeyPress: PropTypes.func
 };

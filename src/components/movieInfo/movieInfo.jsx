@@ -5,7 +5,7 @@ import { MovieDetails } from '../movieDetails/movieDetails';
 
 import './movieInfo.scss';
 
-export const MovieInfo = ({movie}) => {
+export const MovieInfo = ({ movie }) => {
   return (
     <div>
       <div className="movieInfo__header">

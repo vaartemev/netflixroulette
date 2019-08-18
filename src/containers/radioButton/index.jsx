@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Button } from '../../components/button/button';
 
-export const RadioButton = ({ type, array, actionType }) => {
+export const RadioButton = ({ type, array, filter }) => {
   const dispatch = useDispatch();
   const [selected, select] = useState(0);
 
@@ -14,7 +14,7 @@ export const RadioButton = ({ type, array, actionType }) => {
         text={item.title}
         checked={selected === index}
         handleOnClick={() => {
-          dispatch(actionType(item.key)), select(index);
+          dispatch(filter(item.key)), select(index);
         }}
       />
     );

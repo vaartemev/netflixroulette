@@ -12,9 +12,13 @@ const filters = [
 ];
 
 export const SearchControls = ({ searchValue }) => {
-  const searchFilter = useSelector(state => state.movie.searchBy);
-  const sortFilter = useSelector(state => state.movie.sortBy);
+  const { searchFilter, sortFilter } = useSelector(state => ({
+    searchFilter: state.movie.searchBy,
+    sortFilter: state.movie.sortBy
+  }));
+
   const dispatch = useDispatch();
+
   return (
     <div className="filters">
       <div className="filters__title">Search by</div>
@@ -22,7 +26,7 @@ export const SearchControls = ({ searchValue }) => {
         <RadioButton
           type={ButtonType.filter}
           array={filters}
-          actionType={setSearchFilter}
+          filter={setSearchFilter}
         />
       </div>
       <Button

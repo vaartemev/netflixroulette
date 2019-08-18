@@ -7,19 +7,18 @@ import { getMoviesBySearchQuery } from '../../actions';
 import './header.scss';
 
 export const Header = () => {
-  const { searchValue, searchFilter, sortFilter } = useSelector(state => ({
-    searchValue: state.movie.searchValue,
+  const { movie, searchFilter, sortFilter } = useSelector(state => ({
+    movie: state.movie.movie,
     searchFilter: state.movie.searchBy,
     sortFilter: state.movie.sortBy
   }));
 
   const dispatch = useDispatch();
 
-  const handleOnKeyPress = value => {
-    dispatch(getMoviesBySearchQuery(value, searchFilter, sortFilter));
+  const handleOnKeyPress = searchValue => {
+    dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
   };
 
-  const movie = useSelector(state => state.movie.movie);
   return (
     <div className="header">
       <Logo text="netflixroulette" />
