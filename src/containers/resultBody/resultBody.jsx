@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
+import { Preloader } from '../../components/preloader/preloader';
 import { MovieItem } from '../../components/movieItem/movieItem';
 import { NoFilmsFound } from '../../components/noFilmsFound/noFilmsFound';
 import './resultBody.scss';
@@ -22,9 +23,7 @@ export const ResultBody = () => {
     <div className="content">
       <div className={resultClass}>
         {isFetching ? (
-          <div className="preloader">
-            <div className="loader"></div>
-          </div>
+          <Preloader />
         ) : movies.length === 0 ? (
           <NoFilmsFound />
         ) : (
