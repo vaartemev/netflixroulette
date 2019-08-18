@@ -2,15 +2,22 @@
 	padding: 50px;
 	background-color: #fdfdfd;
 }
+
 .films-list {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	justify-items: center
 }
 
-.no-films-found{
+.no-films-found {
 	width: 100%;
 	height: 480px;
 	text-align: center;
 	line-height: 480px;
+}
+
+@media only screen and (max-width: 991px) {
+	.films-list {
+		grid-template-columns: 1fr 1fr;
+	}
 }
