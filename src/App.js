@@ -9,7 +9,7 @@ export const App = () => {
   return (
     <ErrorBoundary>
       <Header />
-      <ResultInfo foundedMovies={8} />
+      <ResultInfo />
       <ResultBody />
       <Footer />
     </ErrorBoundary>

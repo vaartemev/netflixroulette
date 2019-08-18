@@ -1,5 +1,6 @@
-export const baseUrl = 'http://react-cdp-api.herokuapp.com/movies/';
+export const baseUrl = 'http://react-cdp-api.herokuapp.com/movies';
 
+export const GET_SEARCH_QUERY = 'GET_SEARCH_QUERY';
 export const GET_MOVIES = 'GET_MOVIES';
 export const GET_MOVIES_SUCCESS = 'GET_MOVIES_SUCCESS';
 export const GET_MOVIES_FAILURE = 'GET_MOVIES_FAILURE';
@@ -8,3 +9,8 @@ export const GET_MOVIE_DETAILS_BY_ID_SUCCESS =
   'GET_MOVIE_DETAILS_BY_ID_SUCCESS';
 export const GET_MOVIE_DETAILS_BY_ID_FAILURE =
   'GET_MOVIE_DETAILS_BY_ID_FAILURE';
+export const GET_MOVIES_BY_SEARCH_QUERY = 'GET_MOVIES_BY_SEARCH_QUERY';
+export const GET_MOVIES_BY_SEARCH_QUERY_SUCCESS = 'GET_MOVIES_BY_SEARCH_QUERY_SUCCESS';
+export const GET_MOVIES_BY_SEARCH_QUERY_FAILURE = 'GET_MOVIES_BY_SEARCH_QUERY_FAILURE';
+export const SET_SEARCH_FILTER = 'SET_SEARCH_FILTER';
+export const SET_SORT_FILTER = 'SET_SORT_FILTER';

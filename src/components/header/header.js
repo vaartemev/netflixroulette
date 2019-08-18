@@ -1,15 +1,21 @@
 import React from 'react';
-// import { MovieInfo } from '../movieInfo/movieInfo';
+import {useSelector} from 'react-redux';
+import { MovieInfo } from '../movieInfo/movieInfo';
 import { Logo } from '../logo/logo';
 import { SearchField } from '../searchField/searchField';
 import './header.scss';
 
 export const Header = () => {
+  const movie = useSelector(state => state.movie.movie);
   return (
     <div className="header">
-      {/* <MovieInfo /> */}
       <Logo text="netflixroulette" />
-      <SearchField />
+	  {
+		  'genres' in movie  ?
+		  <MovieInfo movie={movie}/> :
+      	<SearchField />
+	  }
+	  
     </div>
   );
 };
