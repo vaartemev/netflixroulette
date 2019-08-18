@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Button } from '../../components/button/button';
 
 export const RadioButton = ({ type, array, actionType }) => {
-
   const dispatch = useDispatch();
   const [selected, select] = useState(0);
 
@@ -13,8 +12,10 @@ export const RadioButton = ({ type, array, actionType }) => {
         key={item.key}
         type={type}
         text={item.title}
-		checked={selected === index}
-        handleOnClick={() => {dispatch(actionType(item.key)), select(index)}}
+        checked={selected === index}
+        handleOnClick={() => {
+          dispatch(actionType(item.key)), select(index);
+        }}
       />
     );
   });
