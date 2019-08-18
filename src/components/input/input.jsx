@@ -1,7 +1,7 @@
 import React from 'react';
 import './input.scss';
 
-export const Input = ({ searchValue, setValue, handleOnKeyPress }) => {
+export const Input = ({ searchValue, setValue, handleOnEnterPress }) => {
   return (
     <label className="search__field--wrapper">
       <input
@@ -10,7 +10,7 @@ export const Input = ({ searchValue, setValue, handleOnKeyPress }) => {
         className="search__field"
         onChange={e => setValue((searchValue = e.target.value))}
         onKeyPress={e =>
-          e.key === 'Enter' ? handleOnKeyPress(searchValue) : false
+          e.key === 'Enter' ? handleOnEnterPress(searchValue) : false
         }
       />
     </label>

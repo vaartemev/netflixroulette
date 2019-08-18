@@ -5,7 +5,7 @@ import { Input } from '../input/input';
 
 import './searchField.scss';
 
-export const SearchField = ({ handleOnKeyPress }) => {
+export const SearchField = ({ handleOnEnterPress }) => {
   const [searchValue, setValue] = useState('');
   return (
     <div className="search">
@@ -13,7 +13,7 @@ export const SearchField = ({ handleOnKeyPress }) => {
       <Input
         searchValue={searchValue}
         setValue={setValue}
-        handleOnKeyPress={handleOnKeyPress}
+        handleOnEnterPress={handleOnEnterPress}
       />
       <SearchControls searchValue={searchValue} />
     </div>
@@ -21,5 +21,5 @@ export const SearchField = ({ handleOnKeyPress }) => {
 };
 
 SearchField.propTypes = {
-  handleOnKeyPress: PropTypes.func
+  handleOnEnterPress: PropTypes.func
 };

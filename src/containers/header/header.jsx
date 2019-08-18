@@ -15,7 +15,7 @@ export const Header = () => {
 
   const dispatch = useDispatch();
 
-  const handleOnKeyPress = searchValue => {
+  const handleOnEnterPress = searchValue => {
     dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
   };
 
@@ -25,7 +25,7 @@ export const Header = () => {
       {typeof movie !== 'undefined' && 'genres' in movie ? (
         <MovieInfo movie={movie} />
       ) : (
-        <SearchField handleOnKeyPress={handleOnKeyPress} />
+        <SearchField handleOnEnterPress={handleOnEnterPress} />
       )}
     </div>
   );
