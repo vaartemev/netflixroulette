@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
-import { MovieItem } from '../movieItem/movieItem';
-import { NoFilmsFound } from '../noFilmsFound/noFilmsFound';
+import { MovieItem } from '../../components/movieItem/movieItem';
+import { NoFilmsFound } from '../../components/noFilmsFound/noFilmsFound';
 import './resultBody.scss';
 import { getMovieDetailsById } from '../../actions';
 

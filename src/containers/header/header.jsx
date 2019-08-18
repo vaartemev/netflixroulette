@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { MovieInfo } from '../movieInfo/movieInfo';
-import { Logo } from '../logo/logo';
-import { SearchField } from '../searchField/searchField';
+import { MovieInfo } from '../../components/movieInfo/movieInfo';
+import { Logo } from '../../components/logo/logo';
+import { SearchField } from '../../components/searchField/searchField';
 import { getMoviesBySearchQuery } from '../../actions';
 import './header.scss';
 
@@ -15,10 +15,8 @@ export const Header = () => {
 
   const dispatch = useDispatch();
 
-  const handleOnKeyPress = event => {
-    if (event.key === 'Enter') {
-      dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
-    }
+  const handleOnKeyPress = value => {
+    dispatch(getMoviesBySearchQuery(value, searchFilter, sortFilter));
   };
 
   const movie = useSelector(state => state.movie.movie);

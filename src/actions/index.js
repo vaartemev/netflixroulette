@@ -1,12 +1,12 @@
 import {
-  GET_MOVIE_DETAILS_BY_ID,
-  GET_MOVIE_DETAILS_BY_ID_SUCCESS,
-  GET_MOVIE_DETAILS_BY_ID_FAILURE,
-  GET_MOVIES_BY_SEARCH_QUERY,
-  GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
-  GET_MOVIES_BY_SEARCH_QUERY_FAILURE,
-  SET_SEARCH_FILTER,
-  SET_SORT_FILTER
+	GET_MOVIE_DETAILS_BY_ID,
+	GET_MOVIE_DETAILS_BY_ID_SUCCESS,
+	GET_MOVIE_DETAILS_BY_ID_FAILURE,
+	GET_MOVIES_BY_SEARCH_QUERY,
+	GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
+	GET_MOVIES_BY_SEARCH_QUERY_FAILURE,
+	SET_SEARCH_FILTER,
+	SET_SORT_FILTER
 } from '../constants';
 
 export const getMoviesBySearchQuery = (search, searchBy = 'title', sortBy = 'release_date', sortOrder = 'desc') => {
@@ -23,41 +23,41 @@ export const getMoviesBySearchQuery = (search, searchBy = 'title', sortBy = 'rel
 
 export const getMoviesBySearchQuerySuccess = (movies) => {
 	return {
-	  type: GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
-	  payload: {
-		movies
-	  }
+		type: GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
+		payload: {
+			movies
+		}
 	};
 };
 
 export const getMoviesBySearchQueryFailure = () => {
 	return {
-	  type: GET_MOVIES_BY_SEARCH_QUERY_FAILURE
+		type: GET_MOVIES_BY_SEARCH_QUERY_FAILURE
 	};
 };
 
 export const getMovieDetailsById = (id) => {
-  return {
-    type: GET_MOVIE_DETAILS_BY_ID,
-    payload: {
-	  id
-    }
-  };
+	return {
+		type: GET_MOVIE_DETAILS_BY_ID,
+		payload: {
+			id
+		}
+	};
 };
 
 export const getMovieDetailsByIdSuccess = (movie) => {
-  return {
-    type: GET_MOVIE_DETAILS_BY_ID_SUCCESS,
-    payload: {
-      movie
-    }
-  };
+	return {
+		type: GET_MOVIE_DETAILS_BY_ID_SUCCESS,
+		payload: {
+			movie
+		}
+	};
 };
 
 export const getMovieDetailsByIdFailure = () => {
-  return {
-    type: GET_MOVIE_DETAILS_BY_ID_FAILURE
-  };
+	return {
+		type: GET_MOVIE_DETAILS_BY_ID_FAILURE
+	};
 };
 
 export const setSearchFilter = (searchBy) => {

@@ -23,7 +23,9 @@ export const MovieDetails = ({
       </div>
       <div className="about__content">
         <MovieTitle className="about__title" title={title} />
-        <div className="about__rating">{vote_average}</div>
+        {vote_average !== 0 && (
+          <div className="about__rating">{vote_average}</div>
+        )}
         <h4 className="about__subtitle">{tagline}</h4>
         <div className="about__additional">
           <h5 className="release-date">

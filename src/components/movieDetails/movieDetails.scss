@@ -10,11 +10,11 @@
 	&__picture {
 		width: 280px;
 		height: 410px;
+		overflow: hidden;
 	}
 
 	&__thumbnail {
 		width: 100%;
-		height: 100%;
 	}
 
 	&__title {

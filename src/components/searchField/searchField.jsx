@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SearchControls } from '../searchControls/searchControls';
+import { SearchControls } from '../../containers/searchControls/searchControls';
 import { Input } from '../input/input';
 
 import './searchField.scss';

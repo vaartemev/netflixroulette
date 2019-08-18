@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesBySearchQuery, setSearchFilter } from '../../actions';
-import { Button, ButtonType } from '../button/button';
-import { RadioButton } from '../../containers/radioButton';
+import { Button, ButtonType } from '../../components/button/button';
+import { RadioButton } from '../radioButton';
 
-import './SearchControls.scss';
+import './searchControls.scss';
 
 const filters = [
   { key: 'title', title: 'Title' },
