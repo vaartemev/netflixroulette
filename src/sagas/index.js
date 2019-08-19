@@ -1,10 +1,9 @@
 import { put, call, all, takeEvery } from 'redux-saga/effects';
 import {
   GET_MOVIE_DETAILS_BY_ID,
-  GET_MOVIES_BY_SEARCH_QUERY,
-  GET_MOVIES_BY_SAME_GENRE
+  GET_MOVIES_BY_SEARCH_QUERY
 } from '../constants';
-import { getFilms } from '../utils';
+import { fetchMovieById, fetchMovies } from '../utils';
 import {
   getMoviesBySearchQuerySuccess,
   getMoviesBySearchQueryFailure,
@@ -15,7 +14,7 @@ import {
 
 function* getMoviesBySearch(action) {
   try {
-    const response = yield call(getFilms, action);
+    const response = yield call(fetchMovies, action.payload);
     const movies = response.data;
     yield put(getMoviesBySearchQuerySuccess(movies));
   } catch (err) {
@@ -29,7 +28,7 @@ function* watchGetQuery() {
 
 function* getMovieDetails(action) {
   try {
-    const movie = yield call(getFilms, action);
+    const movie = yield call(fetchMovieById, action.payload.id);
     const genre = movie.genres[0];
     yield put(getMovieDetailsByIdSuccess(movie));
     yield put(getMoviesBySearchQuery(genre, 'genres'));

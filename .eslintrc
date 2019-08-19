@@ -12,7 +12,7 @@
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
     "react/require-default-props": 0,
-    "linebreak-style": 2,
+    "linebreak-style": ["error", "unix"],
     "react/button-has-type": 0,
     "react/prop-types": 0,
     "no-plusplus": 0,
