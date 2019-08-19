@@ -14,6 +14,7 @@ export const SearchField = ({ handleOnEnterPress }) => {
         searchValue={searchValue}
         setValue={setValue}
         handleOnEnterPress={handleOnEnterPress}
+        placeholderText="What do you what find?"
       />
       <SearchControls searchValue={searchValue} />
     </div>
