@@ -22,7 +22,7 @@ export const Header = () => {
   return (
     <div className="header">
       <Logo text="netflixroulette" />
-      {typeof movie !== 'undefined' && 'genres' in movie ? (
+      {typeof movie !== 'undefined' && Object.keys(movie).length ? (
         <MovieInfo movie={movie} />
       ) : (
         <SearchField handleOnEnterPress={handleOnEnterPress} />
