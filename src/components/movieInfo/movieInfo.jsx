@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Logo } from '../logo/logo';
 import { Button, ButtonType } from '../button/button';
 import { MovieDetails } from '../movieDetails/movieDetails';
@@ -15,4 +16,8 @@ export const MovieInfo = ({ movie }) => {
       <MovieDetails movie={movie} />
     </div>
   );
+};
+
+MovieInfo.ptopTypes = {
+  movie: PropTypes.obj
 };
