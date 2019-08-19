@@ -29,7 +29,7 @@ export const ResultInfo = () => {
             <span className="sort__title">Sort by</span>
             <RadioButton
               type={ButtonType.Sort}
-              array={sortBy}
+              filters={sortBy}
               filter={setSortFilter}
             />
           </div>

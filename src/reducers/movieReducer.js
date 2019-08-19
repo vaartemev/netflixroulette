@@ -11,15 +11,14 @@ import {
 
 const initialState = {
   movies: [],
-  id: 0,
-  movie: [],
+  movie: {},
   searchQuery: '',
   searchBy: 'title',
   sortBy: 'release_date',
   isFetching: false
 };
 
-export const movie = (state = initialState, action) => {
+export const movieReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case GET_MOVIES_BY_SEARCH_QUERY:
@@ -36,7 +35,10 @@ export const movie = (state = initialState, action) => {
         isFetching: false
       };
     case GET_MOVIES_BY_SEARCH_QUERY_FAILURE:
-      return state;
+      return {
+        ...state,
+        isFetching: false
+      };
     case SET_SEARCH_FILTER:
       return {
         ...state,
@@ -60,7 +62,10 @@ export const movie = (state = initialState, action) => {
         isFetching: false
       };
     case GET_MOVIE_DETAILS_BY_ID_FAILURE:
-      return state;
+      return {
+        ...state,
+        isFetching: false
+      };
 
     default:
       return state;

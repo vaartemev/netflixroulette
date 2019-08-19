@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Button } from '../../components/button/button';
 
-export const RadioButton = ({ type, array, filter }) => {
+export const RadioButton = ({ type, filters, filter }) => {
   const dispatch = useDispatch();
   const [selected, select] = useState(0);
 
-  return array.map((item, index) => {
+  return filters.map((item, index) => {
     return (
       <Button
         key={item.key}
@@ -19,4 +20,10 @@ export const RadioButton = ({ type, array, filter }) => {
       />
     );
   });
+};
+
+RadioButton.propTypes = {
+  type: PropTypes.string,
+  filters: PropTypes.array,
+  filter: PropTypes.func
 };

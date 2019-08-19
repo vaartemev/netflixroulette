@@ -25,7 +25,7 @@ export const SearchControls = ({ searchValue }) => {
       <div className="filters__buttons">
         <RadioButton
           type={ButtonType.filter}
-          array={filters}
+          filters={filters}
           filter={setSearchFilter}
         />
       </div>
