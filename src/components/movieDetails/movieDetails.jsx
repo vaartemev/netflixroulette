@@ -27,11 +27,11 @@ export const MovieDetails = ({
           <div className="about__rating">{vote_average}</div>
         )}
         <h4 className="about__subtitle">{tagline}</h4>
-        <div className="about__additional">
+        <div className="about__additional-info">
           <h5 className="release-date">
             {new Date(release_date).getFullYear()}
           </h5>
-          {runtime !== null && <h5 className="runtime">{runtime} min</h5>}
+          {runtime && <h5 className="runtime">{runtime} min</h5>}
         </div>
         <p className="about__text">{overview}</p>
       </div>
@@ -40,11 +40,13 @@ export const MovieDetails = ({
 };
 
 MovieDetails.propTypes = {
-  poster_path: PropTypes.string,
-  title: PropTypes.string,
-  vote_average: PropTypes.number,
-  tagline: PropTypes.string,
-  release_date: PropTypes.string,
-  runtime: PropTypes.number,
-  overview: PropTypes.string
+  movie: PropTypes.shape({
+    poster_path: PropTypes.string,
+    title: PropTypes.string,
+    vote_average: PropTypes.number,
+    tagline: PropTypes.string,
+    release_date: PropTypes.string,
+    runtime: PropTypes.number,
+    overview: PropTypes.string
+  })
 };
