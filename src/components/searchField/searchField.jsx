@@ -1,27 +1,42 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { SearchControls } from '../../containers/searchControls/searchControls';
+import { SearchControls } from '../searchControls/searchControls';
 import { Input } from '../input/input';
 
 import './searchField.scss';
 
-export const SearchField = ({ handleOnEnterPress }) => {
-  const [searchValue, setValue] = useState('');
-
+export const SearchField = ({
+  handleOnEnterPress,
+  handleOnInput,
+  handleOnSearchClick,
+  searchValue,
+  searchFilter,
+  sortFilter
+}) => {
   return (
     <div className="search">
       <div className="search__title">Find your movie</div>
       <Input
         searchValue={searchValue}
-        setValue={setValue}
+        handleOnInput={handleOnInput}
         handleOnEnterPress={handleOnEnterPress}
         placeholderText="What do you what find?"
       />
-      <SearchControls searchValue={searchValue} />
+      <SearchControls
+        searchValue={searchValue}
+        searchFilter={searchFilter}
+        sortFilter={sortFilter}
+        handleOnSearchClick={handleOnSearchClick}
+      />
     </div>
   );
 };
 
 SearchField.propTypes = {
-  handleOnEnterPress: PropTypes.func
+  handleOnEnterPress: PropTypes.func,
+  handleOnInput: PropTypes.func,
+  handleOnSearchClick: PropTypes.func,
+  searchValue: PropTypes.string,
+  searchFilter: PropTypes.string,
+  sortFilter: PropTypes.string
 };

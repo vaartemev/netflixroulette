@@ -6,7 +6,8 @@ import {
   GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
   GET_MOVIES_BY_SEARCH_QUERY_FAILURE,
   SET_SEARCH_FILTER,
-  SET_SORT_FILTER
+  SET_SORT_FILTER,
+  SET_SEARCH_VALUE
 } from '../constants';
 
 export const getMoviesBySearchQuery = (
@@ -79,6 +80,15 @@ export const setSortFilter = sortBy => {
     type: SET_SORT_FILTER,
     payload: {
       sortBy
+    }
+  };
+};
+
+export const setSearchValue = searchValue => {
+  return {
+    type: SET_SEARCH_VALUE,
+    payload: {
+      searchValue
     }
   };
 };

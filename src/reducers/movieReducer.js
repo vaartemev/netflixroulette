@@ -1,6 +1,7 @@
 import {
   SET_SEARCH_FILTER,
   SET_SORT_FILTER,
+  SET_SEARCH_VALUE,
   GET_MOVIE_DETAILS_BY_ID,
   GET_MOVIE_DETAILS_BY_ID_SUCCESS,
   GET_MOVIE_DETAILS_BY_ID_FAILURE,
@@ -48,6 +49,11 @@ export const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         sortBy: payload.sortBy
+      };
+    case SET_SEARCH_VALUE:
+      return {
+        ...state,
+        searchQuery: payload.searchValue
       };
     case GET_MOVIE_DETAILS_BY_ID:
       return {

@@ -4,9 +4,9 @@ import './input.scss';
 
 export const Input = ({
   searchValue,
-  setValue,
   placeholderText,
-  handleOnEnterPress
+  handleOnEnterPress,
+  handleOnInput
 }) => {
   return (
     <label className="search-field__wrapper">
@@ -14,7 +14,7 @@ export const Input = ({
         type="text"
         placeholder={placeholderText}
         className="search__field"
-        onChange={({ target: { value } }) => setValue((searchValue = value))}
+        onInput={({ target: { value } }) => handleOnInput(value)}
         onKeyPress={({ key }) => handleOnEnterPress(searchValue, key)}
       />
     </label>

@@ -4,15 +4,18 @@ import { MovieDetails } from '../../components/movieDetails/movieDetails';
 import { Logo } from '../../components/logo/logo';
 import { SearchField } from '../../components/searchField/searchField';
 import { Button, ButtonType } from '../../components/button/button';
-import { getMoviesBySearchQuery } from '../../actions';
+import { getMoviesBySearchQuery, setSearchValue } from '../../actions';
 import './header.scss';
 
 export const Header = () => {
-  const { movie, searchFilter, sortFilter } = useSelector(state => ({
-    movie: state.movie.movie,
-    searchFilter: state.movie.searchBy,
-    sortFilter: state.movie.sortBy
-  }));
+  const { movie, searchValue, searchFilter, sortFilter } = useSelector(
+    state => ({
+      movie: state.movie.movie,
+      searchValue: state.movie.searchQuery,
+      searchFilter: state.movie.searchBy,
+      sortFilter: state.movie.sortBy
+    })
+  );
 
   const dispatch = useDispatch();
 
@@ -20,6 +23,14 @@ export const Header = () => {
     if (key === 'Enter') {
       dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
     }
+  };
+
+  const handleOnInput = value => {
+    dispatch(setSearchValue(value));
+  };
+
+  const handleOnSearchClick = (searchValue, searchFilter, sortFilter) => {
+    dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
   };
 
   return (
@@ -31,7 +42,14 @@ export const Header = () => {
           <MovieDetails movie={movie} />
         </>
       ) : (
-        <SearchField handleOnEnterPress={handleOnEnterPress} />
+        <SearchField
+          handleOnEnterPress={handleOnEnterPress}
+          handleOnInput={handleOnInput}
+          handleOnSearchClick={handleOnSearchClick}
+          searchValue={searchValue}
+          searchFilter={searchFilter}
+          sortFilter={sortFilter}
+        />
       )}
     </div>
   );
