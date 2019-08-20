@@ -12,9 +12,9 @@ import {
   getMoviesBySearchQuery
 } from '../actions';
 
-function* getMoviesBySearch(action) {
+function* getMoviesBySearch({ payload }) {
   try {
-    const response = yield call(fetchMovies, action.payload);
+    const response = yield call(fetchMovies, payload);
     const movies = response.data;
     yield put(getMoviesBySearchQuerySuccess(movies));
   } catch (err) {
@@ -26,9 +26,9 @@ function* watchGetQuery() {
   yield takeEvery(GET_MOVIES_BY_SEARCH_QUERY, getMoviesBySearch);
 }
 
-function* getMovieDetails(action) {
+function* getMovieDetails({ payload: { id } }) {
   try {
-    const movie = yield call(fetchMovieById, action.payload.id);
+    const movie = yield call(fetchMovieById, id);
     const genre = movie.genres[0];
     yield put(getMovieDetailsByIdSuccess(movie));
     yield put(getMoviesBySearchQuery(genre, 'genres'));

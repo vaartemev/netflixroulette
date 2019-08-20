@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { MovieInfo } from '../../components/movieInfo/movieInfo';
+import { MovieDetails } from '../../components/movieDetails/movieDetails';
 import { Logo } from '../../components/logo/logo';
 import { SearchField } from '../../components/searchField/searchField';
+import { Button, ButtonType } from '../../components/button/button';
 import { getMoviesBySearchQuery } from '../../actions';
 import './header.scss';
 
@@ -15,15 +16,20 @@ export const Header = () => {
 
   const dispatch = useDispatch();
 
-  const handleOnEnterPress = searchValue => {
-    dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
+  const handleOnEnterPress = (searchValue, key) => {
+    if (key === 'Enter') {
+      dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
+    }
   };
 
   return (
     <div className="header">
       <Logo text="netflixroulette" />
       {typeof movie !== 'undefined' && Object.keys(movie).length ? (
-        <MovieInfo movie={movie} />
+        <>
+          <Button type={ButtonType.searchLink} text="Search" />
+          <MovieDetails movie={movie} />
+        </>
       ) : (
         <SearchField handleOnEnterPress={handleOnEnterPress} />
       )}

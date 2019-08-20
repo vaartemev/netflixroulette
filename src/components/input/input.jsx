@@ -15,9 +15,7 @@ export const Input = ({
         placeholder={placeholderText}
         className="search__field"
         onChange={({ target: { value } }) => setValue((searchValue = value))}
-        onKeyPress={({ key }) =>
-          key === 'Enter' && handleOnEnterPress(searchValue)
-        }
+        onKeyPress={({ key }) => handleOnEnterPress(searchValue, key)}
       />
     </label>
   );

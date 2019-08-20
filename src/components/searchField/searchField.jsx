@@ -7,6 +7,7 @@ import './searchField.scss';
 
 export const SearchField = ({ handleOnEnterPress }) => {
   const [searchValue, setValue] = useState('');
+
   return (
     <div className="search">
       <div className="search__title">Find your movie</div>

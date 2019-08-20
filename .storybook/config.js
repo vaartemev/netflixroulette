@@ -1,5 +1,5 @@
 import { configure } from '@storybook/react';
-import '../src/main.scss';
+import '../src/normalize.scss';
 
 const req = require.context('../src/components', true, /\.story\.js$/);
 
