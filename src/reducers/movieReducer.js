@@ -10,7 +10,7 @@ import {
   GET_MOVIES_BY_SEARCH_QUERY_FAILURE
 } from '../constants';
 
-const initialState = {
+export const initialState = {
   movies: [],
   movie: {},
   searchQuery: '',
