@@ -8,7 +8,7 @@
     "storybook": "start-storybook",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage --testPathPattern=test.js",
+    "test:cov": "jest --coverage",
     "test:spec": "jest --testPathPattern=spec.js --runInBand"
   },
   "author": "Vladimir Artemev",
@@ -42,7 +42,9 @@
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
+    "redux-test-utils": "^0.3.0",
     "sass-loader": "^7.1.0",
+    "sinon": "^7.4.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6",

@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { stringify } from 'query-string';
-import { baseUrl } from '../constants';
+
+const instance = axios.create({
+  baseURL: 'http://react-cdp-api.herokuapp.com/movies'
+});
 
 export const fetchMovies = async params => {
-  const movies = await axios
-    .get(`${baseUrl}?${stringify(params)}`)
+  const movies = await instance
+    .get(`?${stringify(params)}`)
     .then(response => {
       return response.data;
     })
@@ -13,8 +16,8 @@ export const fetchMovies = async params => {
 };
 
 export const fetchMovieById = async params => {
-  const movie = await axios
-    .get(`${baseUrl}/${params}`)
+  const movie = await instance
+    .get(`/${params}`)
     .then(response => {
       return response.data;
     })

@@ -14,31 +14,29 @@ export const ResultBody = () => {
   }));
   const dispatch = useDispatch();
 
-  const resultClass = classNames({
-    'no-films-found': movies.length === 0,
-    'films-list': movies.length > 0
+  const resultClass = classNames('content', {
+    'content-not-found': movies.length === 0,
+    'content-films-list': movies.length > 0
   });
 
   return (
-    <div className="content">
-      <div className={resultClass}>
-        {isFetching ? (
-          <Preloader />
-        ) : movies.length === 0 ? (
-          <NoFilmsFound />
-        ) : (
-          movies.map(({ id, title, poster_path, release_date, genres }) => (
-            <MovieItem
-              key={id}
-              handleOnClick={() => dispatch(getMovieDetailsById(id))}
-              title={title}
-              src={poster_path}
-              year={release_date}
-              genre={genres}
-            />
-          ))
-        )}
-      </div>
+    <div className={resultClass}>
+      {isFetching ? (
+        <Preloader />
+      ) : movies.length === 0 ? (
+        <NoFilmsFound className="content-not-found__text" />
+      ) : (
+        movies.map(({ id, title, poster_path, release_date, genres }) => (
+          <MovieItem
+            key={id}
+            handleOnClick={() => dispatch(getMovieDetailsById(id))}
+            title={title}
+            src={poster_path}
+            year={release_date}
+            genre={genres}
+          />
+        ))
+      )}
     </div>
   );
 };

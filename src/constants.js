@@ -1,5 +1,3 @@
-export const baseUrl = 'http://react-cdp-api.herokuapp.com/movies';
-
 export const SET_SEARCH_VALUE = 'SET_SEARCH_VALUE';
 export const GET_MOVIES = 'GET_MOVIES';
 export const GET_MOVIES_SUCCESS = 'GET_MOVIES_SUCCESS';

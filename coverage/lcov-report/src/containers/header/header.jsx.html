@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/12</span>
+        <span class='fraction'>8/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>3/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>2/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/12</span>
+        <span class='fraction'>8/12</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,9 +111,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,23 +121,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,9 +167,9 @@ import { Button, ButtonType } from '../../components/button/button';
 import { getMoviesBySearchQuery, setSearchValue } from '../../actions';
 import './header.scss';
 &nbsp;
-export const Header = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const { movie, searchValue, searchFilter, sortFilter } = <span class="cstat-no" title="statement not covered" >useSelector(</span>
-<span class="fstat-no" title="function not covered" >    st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+export const Header = () =&gt; {
+  const { movie, searchValue, searchFilter, sortFilter } = useSelector(
+    state =&gt; ({
       movie: state.movie.movie,
       searchValue: state.movie.searchQuery,
       searchFilter: state.movie.searchBy,
@@ -177,27 +177,27 @@ export const Header = <span class="cstat-no" title="statement not covered" ><spa
     })
   );
 &nbsp;
-  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
+  const dispatch = useDispatch();
 &nbsp;
-  const handleOnEnterPress = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>earchValue, key) =&gt; {</span>
+  const handleOnEnterPress = <span class="fstat-no" title="function not covered" >(s</span>earchValue, key) =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (key === 'Enter') {</span>
 <span class="cstat-no" title="statement not covered" >      dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));</span>
     }
   };
 &nbsp;
-  const handleOnInput = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >va</span>lue =&gt; {</span>
+  const handleOnInput = <span class="fstat-no" title="function not covered" >va</span>lue =&gt; {
 <span class="cstat-no" title="statement not covered" >    dispatch(setSearchValue(value));</span>
   };
 &nbsp;
-  const handleOnSearchClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>earchValue, searchFilter, sortFilter) =&gt; {</span>
+  const handleOnSearchClick = <span class="fstat-no" title="function not covered" >(s</span>earchValue, searchFilter, sortFilter) =&gt; {
 <span class="cstat-no" title="statement not covered" >    dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;div className="header"&gt;
       &lt;Logo text="netflixroulette" /&gt;
       {typeof movie !== 'undefined' &amp;&amp; Object.keys(movie).length ? (
-        &lt;&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;&gt;</span>
           &lt;Button type={ButtonType.searchLink} text="Search" /&gt;
           &lt;MovieDetails movie={movie} /&gt;
         &lt;/&gt;
@@ -220,7 +220,7 @@ export const Header = <span class="cstat-no" title="statement not covered" ><spa
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Aug 20 2019 17:23:37 GMT+0300 (Moscow Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Aug 21 2019 15:39:10 GMT+0300 (Moscow Standard Time)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>

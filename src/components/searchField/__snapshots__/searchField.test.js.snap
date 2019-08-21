@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Field renders correctly 1`] = `
+<div
+  className="search"
+>
+  <div
+    className="search__title"
+  >
+    Find your movie
+  </div>
+  <Input
+    handleOnEnterPress={[Function]}
+    handleOnInput={[Function]}
+    placeholderText="What do you what find?"
+    searchValue="string2"
+  />
+  <SearchControls
+    handleOnSearchClick={[Function]}
+    searchFilter="string"
+    searchValue="string2"
+    sortFilter="string2"
+  />
+</div>
+`;

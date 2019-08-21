@@ -1,23 +1,26 @@
 .content {
-	padding: 50px;
 	background-color: #fdfdfd;
-}
-
-.films-list {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	justify-items: center
-}
-
-.no-films-found {
-	width: 100%;
-	height: 480px;
-	text-align: center;
-	line-height: 480px;
+	&-not-found{
+		width: 100%;
+		height: 60vh;
+		line-height: 60vh;
+		text-align: center;
+		&__text{
+			font-size: 48px;
+		}
+	}
+	&-films-list {
+		padding: 50px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		justify-items: center
+	}
 }
 
 @media only screen and (max-width: 991px) {
-	.films-list {
-		grid-template-columns: 1fr 1fr;
+	.content {
+		&-films-list {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 }

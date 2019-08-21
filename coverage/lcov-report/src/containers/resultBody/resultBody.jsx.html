@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>6/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">71.43% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/7</span>
+        <span class='fraction'>5/7</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -88,9 +88,7 @@
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L43'></a><a href='#L43'>43</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -99,20 +97,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -123,7 +120,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,38 +139,36 @@ import { NoFilmsFound } from '../../components/noFilmsFound/noFilmsFound';
 import './resultBody.scss';
 import { getMovieDetailsById } from '../../actions';
 &nbsp;
-export const ResultBody = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const { movies, isFetching } = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+export const ResultBody = () =&gt; {
+  const { movies, isFetching } = useSelector(state =&gt; ({
     movies: state.movie.movies,
     isFetching: state.movie.isFetching
   }));
-  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
+  const dispatch = useDispatch();
 &nbsp;
-  const resultClass = <span class="cstat-no" title="statement not covered" >classNames({</span>
-    'no-films-found': movies.length === 0,
-    'films-list': movies.length &gt; 0
+  const resultClass = classNames('content', {
+    'content-not-found': movies.length === 0,
+    'content-films-list': movies.length &gt; 0
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;div className="content"&gt;
-      &lt;div className={resultClass}&gt;
-        {isFetching ? (
-          &lt;Preloader /&gt;
-        ) : movies.length === 0 ? (
-          &lt;NoFilmsFound /&gt;
-        ) : (
-          movies.map(<span class="fstat-no" title="function not covered" >({</span> id, title, poster_path, release_date, genres }) =&gt; (
-<span class="cstat-no" title="statement not covered" >            &lt;MovieItem</span>
-              key={id}
-              handleOnClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >dispatch(getMovieDetailsById(id))}</span>
-              title={title}
-              src={poster_path}
-              year={release_date}
-              genre={genres}
-            /&gt;
-          ))
-        )}
-      &lt;/div&gt;
+  return (
+    &lt;div className={resultClass}&gt;
+      {isFetching ? (
+<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;Preloader /&gt;</span>
+      ) : movies.length === 0 ? (
+        &lt;NoFilmsFound className="content-not-found__text" /&gt;
+      ) : (
+<span class="branch-1 cbranch-no" title="branch not covered" >        movies.map(<span class="fstat-no" title="function not covered" >({</span> id, title, poster_path, release_date, genres }) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >          &lt;MovieItem</span>
+            key={id}
+            handleOnClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >dispatch(getMovieDetailsById(id))}</span>
+            title={title}
+            src={poster_path}
+            year={release_date}
+            genre={genres}
+          /&gt;
+        ))
+      )}
     &lt;/div&gt;
   );
 };
@@ -184,7 +178,7 @@ export const ResultBody = <span class="cstat-no" title="statement not covered" >
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Aug 20 2019 17:23:37 GMT+0300 (Moscow Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Aug 21 2019 15:39:10 GMT+0300 (Moscow Standard Time)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Details renders correctly 1`] = `
+<div
+  className="about"
+>
+  <div
+    className="about__picture"
+  >
+    <Thumbnail
+      className="about__thumbnail"
+      src="string1"
+    />
+  </div>
+  <div
+    className="about__content"
+  >
+    <MovieTitle
+      className="about__title"
+      title="string2"
+    />
+    <div
+      className="about__rating"
+    >
+      7.4
+    </div>
+    <h4
+      className="about__subtitle"
+    >
+      string3
+    </h4>
+    <div
+      className="about__additional-info"
+    >
+      <h5
+        className="release-date"
+      >
+        NaN
+      </h5>
+      <h5
+        className="runtime"
+      >
+        2
+         min
+      </h5>
+    </div>
+    <p
+      className="about__text"
+    >
+      string5
+    </p>
+  </div>
+</div>
+`;

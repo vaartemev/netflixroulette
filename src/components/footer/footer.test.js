@@ -2,8 +2,13 @@ import { shallow } from 'enzyme';
 import { Footer } from './footer';
 
 describe('<Footer />', () => {
-  const tree = shallow(<Footer text="Vladimir" />);
-  it('Should be rendering with Vladimir', () => {
-    expect(tree).toMatchSnapshot();
+  const output = shallow(<Footer />);
+
+  it('Renders Logo', () => {
+    expect(output.find('Logo')).toHaveLength(1);
+  });
+
+  it('Should be rendering', () => {
+    expect(output).toMatchSnapshot();
   });
 });
