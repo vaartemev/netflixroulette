@@ -1,7 +1,7 @@
 import { put, call, all, takeEvery } from 'redux-saga/effects';
 import {
   GET_MOVIE_DETAILS_BY_ID,
-  GET_MOVIES_BY_SEARCH_QUERY
+  GET_MOVIES_BY_SEARCH_QUERY,
 } from '../constants';
 import { fetchMovieById, fetchMovies } from '../utils';
 import {
@@ -9,7 +9,7 @@ import {
   getMoviesBySearchQueryFailure,
   getMovieDetailsByIdSuccess,
   getMovieDetailsByIdFailure,
-  getMoviesBySearchQuery
+  getMoviesBySearchQuery,
 } from '../actions';
 
 function* getMoviesBySearch({ payload }) {

@@ -1,6 +1,5 @@
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import sinon from 'sinon';
 import { Button } from './button';
 
 describe('<Button />', () => {
@@ -10,10 +9,10 @@ describe('<Button />', () => {
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 
-  it('Test click event on button', () => {
-    const handleOnClick = sinon.spy();
+  it('Should call handleOnClick on click', () => {
+    const handleOnClick = jest.fn();
     const output = shallow(<Button handleOnClick={handleOnClick} />);
     output.find('button').simulate('click');
-    expect(handleOnClick).toHaveProperty('callCount', 1);
+    expect(handleOnClick).toHaveBeenCalled();
   });
 });

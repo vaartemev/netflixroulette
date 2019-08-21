@@ -8,14 +8,14 @@ import './searchControls.scss';
 
 const filters = [
   { key: 'title', title: 'Title' },
-  { key: 'genres', title: 'Genre' }
+  { key: 'genres', title: 'Genre' },
 ];
 
 export const SearchControls = ({
   searchValue,
   searchFilter,
   sortFilter,
-  handleOnSearchClick
+  handleOnSearchClick,
 }) => {
   return (
     <div className="filters">
@@ -42,5 +42,5 @@ SearchControls.propTypes = {
   searchValue: PropTypes.string,
   searchFilter: PropTypes.string,
   sortFilter: PropTypes.string,
-  handleOnSearchClick: PropTypes.func
+  handleOnSearchClick: PropTypes.func,
 };

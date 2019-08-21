@@ -13,7 +13,15 @@ describe('<Input />', () => {
     expect(input.prop('placeholder')).toEqual(props.placeholderText);
   });
 
+  it('Should call handleOnInput on input', () => {
+    const mock = jest.fn();
+
+    console.log(mock.mockReturnValue(42));
+
+    // expect(output).toMatchSnapshot();
+  });
+
   it('Render property', () => {
-    expect(output).toMatchSnapshot();
+    // expect(output).toMatchSnapshot();
   });
 });
