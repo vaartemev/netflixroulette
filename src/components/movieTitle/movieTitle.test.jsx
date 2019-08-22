@@ -1,3 +1,4 @@
+import { React } from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { MovieTitle } from './movieTitle';
@@ -5,7 +6,7 @@ import { MovieTitle } from './movieTitle';
 describe('Movie Title', () => {
   const props = {
     title: 'string2',
-    className: 'string'
+    className: 'string',
   };
 
   const output = shallow(<MovieTitle {...props} />);

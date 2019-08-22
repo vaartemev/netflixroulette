@@ -7,41 +7,41 @@ describe('Actions test', () => {
       search: 'Hello',
       searchBy: 'title',
       sortBy: 'rating',
-      sortOrder: 'desc'
+      sortOrder: 'desc',
     };
-    let expectedAction = {
+    const expectedAction = {
       type: types.GET_MOVIES_BY_SEARCH_QUERY,
       payload: {
         search,
         searchBy,
         sortBy,
-        sortOrder
-      }
+        sortOrder,
+      },
     };
 
     expect(
-      actions.getMoviesBySearchQuery(search, searchBy, sortBy, sortOrder)
+      actions.getMoviesBySearchQuery(search, searchBy, sortBy, sortOrder),
     ).toEqual(expectedAction);
   });
 
   it('should create an action to get movies by search query success', () => {
     const movies = [
       {
-        title: 'galaxy'
+        title: 'galaxy',
       },
       {
-        title: 'star'
-      }
+        title: 'star',
+      },
     ];
     const expectedAction = {
       type: types.GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
       payload: {
-        movies
-      }
+        movies,
+      },
     };
 
     expect(actions.getMoviesBySearchQuerySuccess(movies)).toEqual(
-      expectedAction
+      expectedAction,
     );
   });
 
@@ -50,8 +50,8 @@ describe('Actions test', () => {
     const expectedAction = {
       type: types.GET_MOVIE_DETAILS_BY_ID,
       payload: {
-        id
-      }
+        id,
+      },
     };
 
     expect(actions.getMovieDetailsById(id)).toEqual(expectedAction);
@@ -60,13 +60,13 @@ describe('Actions test', () => {
   it('should create an action to get movies details by id success', () => {
     const movie = {
       id: 650,
-      title: 'galaxy'
+      title: 'galaxy',
     };
     const expectedAction = {
       type: types.GET_MOVIE_DETAILS_BY_ID_SUCCESS,
       payload: {
-        movie
-      }
+        movie,
+      },
     };
 
     expect(actions.getMovieDetailsByIdSuccess(movie)).toEqual(expectedAction);
@@ -77,8 +77,8 @@ describe('Actions test', () => {
     const expectedAction = {
       type: types.SET_SEARCH_FILTER,
       payload: {
-        searchBy
-      }
+        searchBy,
+      },
     };
 
     expect(actions.setSearchFilter(searchBy)).toEqual(expectedAction);
@@ -89,8 +89,8 @@ describe('Actions test', () => {
     const expectedAction = {
       type: types.SET_SORT_FILTER,
       payload: {
-        sortBy
-      }
+        sortBy,
+      },
     };
 
     expect(actions.setSortFilter(sortBy)).toEqual(expectedAction);
@@ -101,8 +101,8 @@ describe('Actions test', () => {
     const expectedAction = {
       type: types.SET_SEARCH_VALUE,
       payload: {
-        searchValue
-      }
+        searchValue,
+      },
     };
 
     expect(actions.setSearchValue(searchValue)).toEqual(expectedAction);

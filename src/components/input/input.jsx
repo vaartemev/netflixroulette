@@ -9,7 +9,7 @@ export const Input = ({
   handleOnInput,
 }) => {
   return (
-    <label className="search-field__wrapper">
+    <label className="search-field__wrapper" htmlFor="input">
       <input
         type="text"
         placeholder={placeholderText}
@@ -23,7 +23,6 @@ export const Input = ({
 
 Input.propTypes = {
   searchValue: PropTypes.string,
-  setValue: PropTypes.func,
   placeholderText: PropTypes.string,
   handleOnEnterPress: PropTypes.func,
 };

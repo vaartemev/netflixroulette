@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MovieTitle } from '../movieTitle/movieTitle';
@@ -13,8 +14,8 @@ export const MovieDetails = ({
     vote_average,
     overview,
     release_date,
-    runtime
-  }
+    runtime,
+  },
 }) => {
   return (
     <div className="about">
@@ -47,6 +48,6 @@ MovieDetails.propTypes = {
     tagline: PropTypes.string,
     release_date: PropTypes.string,
     runtime: PropTypes.number,
-    overview: PropTypes.string
-  })
+    overview: PropTypes.string,
+  }),
 };

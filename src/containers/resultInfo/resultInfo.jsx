@@ -7,14 +7,14 @@ import './resultInfo.scss';
 
 const sortBy = [
   { key: 'release_date', title: 'release date' },
-  { key: 'rating', title: 'rating' }
+  { key: 'rating', title: 'rating' },
 ];
 
 export const ResultInfo = () => {
   const { foundedMovies, genres, movie } = useSelector(state => ({
     foundedMovies: state.movie.movies.length,
     genres: state.movie.movie.genres,
-    movie: state.movie.movie
+    movie: state.movie.movie,
   }));
   return (
     <nav className="additional">

@@ -7,14 +7,14 @@ export const ButtonType = {
   search: 'search',
   searchLink: 'search-link',
   filter: 'filter',
-  sort: 'sort'
+  sort: 'sort',
 };
 
 export const Button = ({
   text,
   checked,
   handleOnClick,
-  type = ButtonType.sort
+  type = ButtonType.sort,
 }) => {
   const resultClass = classNames('button', {
     'button__filter-active': checked && type === ButtonType.filter,
@@ -22,7 +22,7 @@ export const Button = ({
     button__sort: type === ButtonType.sort,
     button__search: type === ButtonType.search,
     'button__search button__search-link': type === ButtonType.searchLink,
-    button__filter: type === ButtonType.filter
+    button__filter: type === ButtonType.filter,
   });
 
   return (
@@ -36,5 +36,5 @@ Button.propTypes = {
   text: PropTypes.string,
   checked: PropTypes.bool,
   handleOnClick: PropTypes.func,
-  type: PropTypes.string
+  type: PropTypes.string,
 };

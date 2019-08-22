@@ -12,7 +12,7 @@ export const fetchMovies = async params => {
     .then(response => {
       return response.data;
     })
-    .catch(error => console.error);
+    .catch(error => console.error(error));
   return movies;
 };
 
@@ -22,6 +22,6 @@ export const fetchMovieById = async params => {
     .then(response => {
       return response.data;
     })
-    .catch(error => console.error);
+    .catch(error => console.error(error));
   return movie;
 };

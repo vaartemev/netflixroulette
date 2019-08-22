@@ -3,18 +3,28 @@
   "parser": "babel-eslint",
   "plugins": ["prettier"],
   "rules": {
+    "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [".jsx", ".js"]
       }
     ],
+    "no-console": "off",
+    "camelcase": 0,
+    "no-underscore-dangle": 0,
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
+    "properties": 0,
     "react/require-default-props": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-one-expression-per-line": 0,
     "linebreak-style": ["error", "unix"],
     "react/button-has-type": 0,
     "react/prop-types": 0,
+    "react/jsx-indent": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
     "no-plusplus": 0,
     "no-undef": 0
   }

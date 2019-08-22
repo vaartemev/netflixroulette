@@ -1,9 +1,10 @@
+import React from 'react';
 import { shallow } from 'enzyme';
 import { Logo } from './logo';
 
 describe('Logo', () => {
   const props = {
-    text: 'SampleText'
+    text: 'SampleText',
   };
   it('Should render Logo with SampleText', () => {
     const output = shallow(<Logo text={props.text} />);
@@ -11,7 +12,7 @@ describe('Logo', () => {
       output
         .find('div')
         .text()
-        .trim()
+        .trim(),
     ).toEqual(props.text);
   });
 });

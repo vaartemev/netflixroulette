@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -8,6 +8,7 @@ export class ErrorBoundary extends React.Component {
 
   static getDerivedStateFromError(error) {
     // Обновить состояние с тем, чтобы следующий рендер показал запасной UI.
+    console.error(error);
     return { hasError: true };
   }
 
@@ -18,11 +19,13 @@ export class ErrorBoundary extends React.Component {
   }
 
   render() {
-    if (this.state.hasError) {
+    const { hasError } = this.state;
+    const { children } = this.props;
+    if (hasError) {
       // Можно отрендерить запасной UI произвольного вида
       return <h1>Что-то пошло не так.</h1>;
     }
 
-    return this.props.children;
+    return children;
   }
 }

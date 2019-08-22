@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { SearchControls } from '../searchControls/searchControls';
 import { Input } from '../input/input';
@@ -11,7 +11,7 @@ export const SearchField = ({
   handleOnSearchClick,
   searchValue,
   searchFilter,
-  sortFilter
+  sortFilter,
 }) => {
   return (
     <div className="search">
@@ -38,5 +38,5 @@ SearchField.propTypes = {
   handleOnSearchClick: PropTypes.func,
   searchValue: PropTypes.string,
   searchFilter: PropTypes.string,
-  sortFilter: PropTypes.string
+  sortFilter: PropTypes.string,
 };

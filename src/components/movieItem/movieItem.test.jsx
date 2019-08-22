@@ -1,3 +1,4 @@
+import { React } from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { MovieItem } from './movieItem';
@@ -8,7 +9,7 @@ describe('Movie Item', () => {
     title: 'string2',
     year: 'string3',
     genre: [1, 2],
-    handleOnClick: f => f()
+    handleOnClick: f => f(),
   };
 
   const output = shallow(<MovieItem {...props} />);

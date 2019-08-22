@@ -9,5 +9,5 @@ export const MovieTitle = ({ className, title }) => {
 
 MovieTitle.propTypes = {
   className: PropTypes.string,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };

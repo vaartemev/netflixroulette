@@ -13,15 +13,15 @@ export const Header = () => {
       movie: state.movie.movie,
       searchValue: state.movie.searchQuery,
       searchFilter: state.movie.searchBy,
-      sortFilter: state.movie.sortBy
-    })
+      sortFilter: state.movie.sortBy,
+    }),
   );
 
   const dispatch = useDispatch();
 
-  const handleOnEnterPress = (searchValue, key) => {
+  const handleOnEnterPress = (value, key) => {
     if (key === 'Enter') {
-      dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
+      dispatch(getMoviesBySearchQuery(value, searchFilter, sortFilter));
     }
   };
 
@@ -29,8 +29,8 @@ export const Header = () => {
     dispatch(setSearchValue(value));
   };
 
-  const handleOnSearchClick = (searchValue, searchFilter, sortFilter) => {
-    dispatch(getMoviesBySearchQuery(searchValue, searchFilter, sortFilter));
+  const handleOnSearchClick = (searchQuery, filter, sort) => {
+    dispatch(getMoviesBySearchQuery(searchQuery, filter, sort));
   };
 
   return (

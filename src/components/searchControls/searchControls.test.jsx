@@ -1,3 +1,4 @@
+import { React } from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { SearchControls } from './searchControls';
@@ -7,7 +8,7 @@ describe('Search Controls', () => {
     searchValue: 'string2',
     searchFilter: 'string',
     sortFilter: 'string2',
-    handleOnSearchClick: f => f()
+    handleOnSearchClick: f => f(),
   };
 
   const output = shallow(<SearchControls {...props} />);

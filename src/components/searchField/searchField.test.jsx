@@ -9,7 +9,7 @@ describe('Search Field', () => {
     sortFilter: 'string2',
     handleOnSearchClick: f => f(),
     handleOnEnterPress: f => f(),
-    handleOnInput: f => f()
+    handleOnInput: f => f(),
   };
 
   const output = shallow(<SearchField {...props} />);

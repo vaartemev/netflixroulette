@@ -1,17 +1,10 @@
-import { put, call, takeEvery } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
-import {
-  getMoviesBySearch,
-  watchGetQuery,
-  getMovieDetails,
-  watchGetMovieById,
-} from './sagas';
+import { getMoviesBySearch, getMovieDetails } from './sagas';
 import {
   getMoviesBySearchQuerySuccess,
   getMoviesBySearchQueryFailure,
   getMovieDetailsByIdSuccess,
   getMovieDetailsByIdFailure,
-  getMoviesBySearchQuery,
 } from '../actions';
 import * as api from '../utils';
 
