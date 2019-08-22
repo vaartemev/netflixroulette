@@ -1,149 +1,149 @@
 import { movieReducer, initialState } from './movieReducer';
 import * as types from '../constants';
 
-describe('Test movie reducer', () => {
-  it('GET_MOVIES_BY_SEARCH_QUERY', () => {
+describe('Movie reducer', () => {
+  it('Should handle get movies by search query', () => {
     const action = {
       type: types.GET_MOVIES_BY_SEARCH_QUERY,
       payload: {
         search: 'awaw',
-        sortBy: 'rating'
-      }
+        sortBy: 'rating',
+      },
     };
     expect(movieReducer(initialState, action)).toEqual({
       ...initialState,
       searchQuery: action.payload.search,
       sortBy: action.payload.sortBy,
-      isFetching: true
+      isFetching: true,
     });
   });
 
-  it('GET_MOVIES_BY_SEARCH_QUERY_SUCCESS', () => {
+  it('should return new state with movies array', () => {
     const newState = {
       movies: [],
       movie: {},
       searchQuery: 'awaw',
       searchBy: 'title',
       sortBy: 'rating',
-      isFetching: true
+      isFetching: true,
     };
     const action = {
       type: types.GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
       payload: {
-        movies: [1, 2, 3]
-      }
+        movies: [1, 2, 3],
+      },
     };
     expect(movieReducer(newState, action)).toEqual({
       ...newState,
       movies: action.payload.movies,
-      isFetching: false
+      isFetching: false,
     });
   });
 
-  it('GET_MOVIES_BY_SEARCH_QUERY_FAILURE', () => {
+  it('should return new state with isFetching equal false', () => {
     const newState = {
       movies: [1, 2, 3],
       movie: {},
       searchQuery: 'awaw',
       searchBy: 'title',
       sortBy: 'rating',
-      isFetching: true
+      isFetching: true,
     };
     const action = {
-      type: types.GET_MOVIES_BY_SEARCH_QUERY_FAILURE
+      type: types.GET_MOVIES_BY_SEARCH_QUERY_FAILURE,
     };
     expect(movieReducer(newState, action)).toEqual({
       ...newState,
-      isFetching: false
+      isFetching: false,
     });
   });
 
-  it('SET_SEARCH_FILTER', () => {
+  it('should return new state with new search filter', () => {
     const newState = {
       movies: [1, 2, 3],
       movie: {},
       searchQuery: 'awaw',
       searchBy: 'title',
       sortBy: 'rating',
-      isFetching: false
+      isFetching: false,
     };
     const action = {
       type: types.SET_SEARCH_FILTER,
       payload: {
-        searchBy: 'genres'
-      }
+        searchBy: 'genres',
+      },
     };
     expect(movieReducer(newState, action)).toEqual({
       ...newState,
-      searchBy: action.payload.searchBy
+      searchBy: action.payload.searchBy,
     });
   });
 
-  it('SET_SORT_FILTER', () => {
+  it('should return new state with new sort filter', () => {
     const newState = {
       movies: [1, 2, 3],
       movie: {},
       searchQuery: 'awaw',
       searchBy: 'genres',
       sortBy: 'rating',
-      isFetching: false
+      isFetching: false,
     };
     const action = {
       type: types.SET_SORT_FILTER,
       payload: {
-        sortBy: 'release_date'
-      }
+        sortBy: 'release_date',
+      },
     };
     expect(movieReducer(newState, action)).toEqual({
       ...newState,
-      sortBy: action.payload.sortBy
+      sortBy: action.payload.sortBy,
     });
   });
 
-  it('SET_SEARCH_VALUE', () => {
+  it('should return new state with new search value', () => {
     const newState = {
       movies: [1, 2, 3],
       movie: {},
       searchQuery: 'awaw',
       searchBy: 'genres',
       sortBy: 'release_date',
-      isFetching: false
+      isFetching: false,
     };
     const action = {
       type: types.SET_SEARCH_VALUE,
       payload: {
-        searchValue: 'query'
-      }
+        searchValue: 'query',
+      },
     };
     expect(movieReducer(newState, action)).toEqual({
       ...newState,
-      searchQuery: action.payload.searchValue
+      searchQuery: action.payload.searchValue,
     });
   });
 
-  it('GET_MOVIE_DETAILS_BY_ID', () => {
+  it('Should handle GET_MOVIE_DETAILS_BY_ID ', () => {
     const newState = {
       movies: [1, 2, 3],
       movie: {},
       searchQuery: 'query',
       searchBy: 'genres',
       sortBy: 'release_date',
-      isFetching: false
+      isFetching: false,
     };
     const action = {
       type: types.GET_MOVIE_DETAILS_BY_ID,
       payload: {
-        id: 650
-      }
+        id: 650,
+      },
     };
     expect(movieReducer(newState, action)).toEqual({
       ...newState,
       id: action.payload.id,
-      isFetching: true
+      isFetching: true,
     });
   });
 
-  it('GET_MOVIE_DETAILS_BY_ID_SUCCESS', () => {
+  it('should return new state with new movie object', () => {
     const newState = {
       movies: [1, 2, 3],
       movie: {},
@@ -151,36 +151,36 @@ describe('Test movie reducer', () => {
       searchBy: 'genres',
       sortBy: 'release_date',
       isFetching: true,
-      id: 650
+      id: 650,
     };
     const action = {
       type: types.GET_MOVIE_DETAILS_BY_ID_SUCCESS,
       payload: {
-        movie: { title: 'galaxy', id: '650' }
-      }
+        movie: { title: 'galaxy', id: '650' },
+      },
     };
     expect(movieReducer(newState, action)).toEqual({
       ...newState,
       movie: action.payload.movie,
-      isFetching: false
+      isFetching: false,
     });
   });
 
-  it('GET_MOVIE_DETAILS_BY_ID_FAILURE', () => {
+  it('should return new state with isFetching equal false', () => {
     const newState = {
       movies: [1, 2, 3],
       movie: {},
       searchQuery: 'query',
       searchBy: 'genres',
       sortBy: 'release_date',
-      isFetching: true
+      isFetching: true,
     };
     const action = {
-      type: types.GET_MOVIE_DETAILS_BY_ID_FAILURE
+      type: types.GET_MOVIE_DETAILS_BY_ID_FAILURE,
     };
     expect(movieReducer(newState, action)).toEqual({
       ...newState,
-      isFetching: false
+      isFetching: false,
     });
   });
 });

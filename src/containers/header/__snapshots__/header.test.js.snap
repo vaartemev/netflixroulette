@@ -55,7 +55,7 @@ exports[`Header Render correctly 1`] = `
               <input
                 className="search__field"
                 onInput={[Function]}
-                onKeyPress={[Function]}
+                onKeyDown={[Function]}
                 placeholder="What do you what find?"
                 type="text"
               />

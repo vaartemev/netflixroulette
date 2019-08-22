@@ -6,7 +6,7 @@ export const Input = ({
   searchValue,
   placeholderText,
   handleOnEnterPress,
-  handleOnInput
+  handleOnInput,
 }) => {
   return (
     <label className="search-field__wrapper">
@@ -15,7 +15,7 @@ export const Input = ({
         placeholder={placeholderText}
         className="search__field"
         onInput={({ target: { value } }) => handleOnInput(value)}
-        onKeyPress={({ key }) => handleOnEnterPress(searchValue, key)}
+        onKeyDown={({ key }) => handleOnEnterPress(searchValue, key)}
       />
     </label>
   );
@@ -25,5 +25,5 @@ Input.propTypes = {
   searchValue: PropTypes.string,
   setValue: PropTypes.func,
   placeholderText: PropTypes.string,
-  handleOnEnterPress: PropTypes.func
+  handleOnEnterPress: PropTypes.func,
 };

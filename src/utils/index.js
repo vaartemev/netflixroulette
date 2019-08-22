@@ -1,8 +1,9 @@
+import 'regenerator-runtime/runtime';
 import axios from 'axios';
 import { stringify } from 'query-string';
 
 const instance = axios.create({
-  baseURL: 'http://react-cdp-api.herokuapp.com/movies'
+  baseURL: 'http://react-cdp-api.herokuapp.com/movies',
 });
 
 export const fetchMovies = async params => {

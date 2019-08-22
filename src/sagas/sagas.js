@@ -12,21 +12,20 @@ import {
   getMoviesBySearchQuery,
 } from '../actions';
 
-function* getMoviesBySearch({ payload }) {
+export function* getMoviesBySearch(action) {
   try {
-    const response = yield call(fetchMovies, payload);
-    const movies = response.data;
-    yield put(getMoviesBySearchQuerySuccess(movies));
+    const movies = yield call(fetchMovies, action.payload);
+    yield put(getMoviesBySearchQuerySuccess(movies.data));
   } catch (err) {
     yield put(getMoviesBySearchQueryFailure());
   }
 }
 
-function* watchGetQuery() {
+export function* watchGetQuery() {
   yield takeEvery(GET_MOVIES_BY_SEARCH_QUERY, getMoviesBySearch);
 }
 
-function* getMovieDetails({ payload: { id } }) {
+export function* getMovieDetails({ payload: { id } }) {
   try {
     const movie = yield call(fetchMovieById, id);
     const genre = movie.genres[0];
@@ -37,7 +36,7 @@ function* getMovieDetails({ payload: { id } }) {
   }
 }
 
-function* watchGetMovieById() {
+export function* watchGetMovieById() {
   yield takeEvery(GET_MOVIE_DETAILS_BY_ID, getMovieDetails);
 }
 
