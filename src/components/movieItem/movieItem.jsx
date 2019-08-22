@@ -7,12 +7,8 @@ import './movieItem.scss';
 
 export const MovieItem = ({ src, title, year, genre, handleOnClick }) => {
   return (
-    <div className="movie">
-      <Thumbnail
-        src={src}
-        handleOnClick={handleOnClick}
-        className="movie__thumbnail"
-      />
+    <div className="movie" onClick={handleOnClick}>
+      <Thumbnail src={src} className="movie__thumbnail" />
       <div className="movie__info">
         <MovieTitle className="movie__title" title={title} />
         <span className="movie__year">{new Date(year).getFullYear()}</span>

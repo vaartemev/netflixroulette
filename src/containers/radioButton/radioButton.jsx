@@ -14,7 +14,7 @@ export const RadioButton = ({ type, filters, filter }) => {
         type={type}
         text={item.title}
         checked={selected === index}
-        handleOnClick={(() => dispatch(filter(item.key)), select(index))}
+        handleOnClick={() => (dispatch(filter(item.key)), select(index))}
       />
     );
   });
