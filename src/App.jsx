@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import { Header } from './containers/header/header';
 import { ResultInfo } from './containers/resultInfo/resultInfo';
 import { ResultBody } from './containers/resultBody/resultBody';
@@ -8,7 +9,9 @@ import { ErrorBoundary } from './containers/errorBoundary/errorBoundary';
 export const App = () => {
   return (
     <ErrorBoundary>
-      <Header />
+      <Switch>
+        <Route path="/" component={Header} />
+      </Switch>
       <ResultInfo />
       <ResultBody />
       <Footer />

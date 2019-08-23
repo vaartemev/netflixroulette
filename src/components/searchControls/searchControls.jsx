@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Button, ButtonType } from '../button/button';
 import { setSearchFilter } from '../../actions';
 import { RadioButton } from '../../containers/radioButton';
@@ -27,13 +28,15 @@ export const SearchControls = ({
           filter={setSearchFilter}
         />
       </div>
-      <Button
-        text="Search"
-        type={ButtonType.search}
-        handleOnClick={() =>
-          handleOnSearchClick(searchValue, searchFilter, sortFilter)
-        }
-      />
+      <Link to={`/search/${searchValue}`}>
+        <Button
+          text="Search"
+          type={ButtonType.search}
+          handleOnClick={() =>
+            handleOnSearchClick(searchValue, searchFilter, sortFilter)
+          }
+        />
+      </Link>
     </div>
   );
 };

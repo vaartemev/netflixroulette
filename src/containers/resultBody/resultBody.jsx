@@ -33,6 +33,7 @@ export const ResultBody = () => {
         : movies.map(({ id, title, poster_path, release_date, genres }) => (
             <MovieItem
               key={id}
+              id={id}
               handleOnClick={() => dispatch(getMovieDetailsById(id))}
               title={title}
               src={poster_path}
