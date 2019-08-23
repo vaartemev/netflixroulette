@@ -7,7 +7,7 @@ import './movieItem.scss';
 
 export const MovieItem = ({ src, title, year, genre, handleOnClick }) => {
   return (
-    <div className="movie" onClick={handleOnClick}>
+    <div className="movie" onClick={handleOnClick} role="link" tabIndex="0">
       <Thumbnail src={src} className="movie__thumbnail" />
       <div className="movie__info">
         <MovieTitle className="movie__title" title={title} />
