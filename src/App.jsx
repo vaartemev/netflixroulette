@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { Header } from './containers/header/header';
 import { ResultInfo } from './containers/resultInfo/resultInfo';
 import { ResultBody } from './containers/resultBody/resultBody';
@@ -9,11 +9,9 @@ import { ErrorBoundary } from './containers/errorBoundary/errorBoundary';
 export const App = () => {
   return (
     <ErrorBoundary>
-      <Switch>
-        <Route path="/" component={Header} />
-      </Switch>
+      <Header />
       <ResultInfo />
-      <ResultBody />
+      <Route path="/film/:id" component={ResultBody} />
       <Footer />
     </ErrorBoundary>
   );

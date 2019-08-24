@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Preloader } from '../../components/preloader/preloader';
 import { MovieItem } from '../../components/movieItem/movieItem';
 import { NoFilmsFound } from '../../components/noFilmsFound/noFilmsFound';
-import './resultBody.scss';
 import { getMovieDetailsById } from '../../actions';
+import './resultBody.scss';
 
 export const ResultBody = () => {
   const { movies, isFetching } = useSelector(state => ({

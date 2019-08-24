@@ -8,7 +8,7 @@ import { Button, ButtonType } from '../../components/button/button';
 import { getMoviesBySearchQuery, setSearchValue } from '../../actions';
 import './header.scss';
 
-export const Header = ({ match }) => {
+export const Header = () => {
   const { movie, searchValue, searchFilter, sortFilter } = useSelector(
     state => ({
       movie: state.movie.movie,
@@ -17,9 +17,6 @@ export const Header = ({ match }) => {
       sortFilter: state.movie.sortBy,
     }),
   );
-
-  console.log(match);
-
   const dispatch = useDispatch();
   const handleOnEnterPress = (value, key) => {
     if (key === 'Enter') {
@@ -38,18 +35,11 @@ export const Header = ({ match }) => {
   return (
     <div className="header">
       <Logo text="netflixroulette" />
-      {typeof movie !== 'undefined' && Object.keys(movie).length ? (
-        <>
-          <Link to="/">
-            <Button type={ButtonType.searchLink} text="Search" />
-          </Link>
-          <Route path="/film/:id">
-            <MovieDetails movie={movie} />
-          </Route>
-        </>
-      ) : (
-        <Switch>
-          <Route path="/">
+      <Switch>
+        <Route
+          path="/"
+          exact
+          render={() => (
             <SearchField
               handleOnEnterPress={handleOnEnterPress}
               handleOnInput={handleOnInput}
@@ -58,9 +48,20 @@ export const Header = ({ match }) => {
               searchFilter={searchFilter}
               sortFilter={sortFilter}
             />
-          </Route>
-        </Switch>
-      )}
+          )}
+        />
+        <Route
+          path="/film/:id"
+          render={() => (
+            <>
+              <Link to="/">
+                <Button type={ButtonType.searchLink} text="Search" />
+              </Link>
+              <MovieDetails movie={movie} />
+            </>
+          )}
+        />
+      </Switch>
     </div>
   );
 };
