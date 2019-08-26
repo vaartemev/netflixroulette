@@ -1,4 +1,4 @@
-import { put, call, all, takeEvery } from 'redux-saga/effects';
+import { put, call, all, takeLatest, takeEvery } from 'redux-saga/effects';
 import {
   GET_MOVIE_DETAILS_BY_ID,
   GET_MOVIES_BY_SEARCH_QUERY,
@@ -37,7 +37,7 @@ export function* getMovieDetails({ payload: { id } }) {
 }
 
 export function* watchGetMovieById() {
-  yield takeEvery(GET_MOVIE_DETAILS_BY_ID, getMovieDetails);
+  yield takeLatest(GET_MOVIE_DETAILS_BY_ID, getMovieDetails);
 }
 
 export function* rootSaga() {

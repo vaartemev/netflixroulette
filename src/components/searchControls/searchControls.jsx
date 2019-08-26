@@ -28,7 +28,7 @@ export const SearchControls = ({
           filter={setSearchFilter}
         />
       </div>
-      <Link to="/search">
+      <Link to={`/search/${searchValue}`}>
         <Button
           text="Search"
           type={ButtonType.search}

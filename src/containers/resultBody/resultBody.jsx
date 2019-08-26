@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
 import { Preloader } from '../../components/preloader/preloader';
 import { MovieItem } from '../../components/movieItem/movieItem';
 import { NoFilmsFound } from '../../components/noFilmsFound/noFilmsFound';
-import { getMovieDetailsById } from '../../actions';
+import { getMovieDetailsById, getMoviesBySearchQuery } from '../../actions';
 import './resultBody.scss';
 
-export const ResultBody = () => {
+export const ResultBody = ({ match }) => {
   const { movies, isFetching } = useSelector(state => ({
     movies: state.movie.movies,
     isFetching: state.movie.isFetching,
   }));
   const dispatch = useDispatch();
-
   const yetLoader = (condition, then, otherwise) =>
     condition ? then : otherwise;
 
@@ -21,6 +20,11 @@ export const ResultBody = () => {
     'content-not-found': movies.length === 0,
     'content-films-list': movies.length > 0,
   });
+
+  const { searchValue } = match.params;
+  useEffect(() => {
+    dispatch(getMoviesBySearchQuery(searchValue));
+  }, []);
 
   return (
     <div className={resultClass}>
