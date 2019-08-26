@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link, Route, Switch } from 'react-router-dom';
 import { MovieDetails } from '../../components/movieDetails/movieDetails';
 import { Logo } from '../../components/logo/logo';
-import { SearchField } from '../../components/searchField/searchField';
 import { Button, ButtonType } from '../../components/button/button';
 import {
   getMoviesBySearchQuery,
@@ -50,6 +49,7 @@ export const Header = connect(
     getMovieDetails,
     handleOnSearchClick,
     match,
+    children,
   }) => {
     const { id } = match.params;
     useEffect(() => {
@@ -58,6 +58,7 @@ export const Header = connect(
     return (
       <div className="header">
         <Logo text="netflixroulette" />
+        {children}
         <Switch>
           <Route
             path="/"

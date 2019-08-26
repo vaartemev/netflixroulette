@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SearchControls } from '../searchControls/searchControls';
-import { Input } from '../input/input';
+import { SearchControls } from '../../../components/searchControls/searchControls';
+import { Input } from '../../../components/input/input';
 
 import './searchField.scss';
 

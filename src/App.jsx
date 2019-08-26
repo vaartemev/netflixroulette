@@ -6,6 +6,8 @@ import { ResultBody } from './containers/resultBody/resultBody';
 import { Footer } from './components/footer/footer';
 import { ErrorBoundary } from './containers/errorBoundary/errorBoundary';
 import { Error } from './components/error/error';
+import { MoviePageLayout } from './pages/moviePage/moviePageLayout/moviePageLayout';
+import { SearchPageLayout } from './pages/searchPage/searchPageLayout';
 
 export const App = () => {
   return (
@@ -14,23 +16,11 @@ export const App = () => {
         <Route path="/" exact component={props => <Header {...props} />} />
         <Route
           path="/search/:searchValue"
-          component={props => (
-            <>
-              <Header {...props} />
-              <ResultInfo {...props} />
-              <ResultBody {...props} />
-            </>
-          )}
+          component={props => <SearchPageLayout {...props} />}
         />
         <Route
           path="/film/:id"
-          component={props => (
-            <>
-              <Header {...props} />
-              <ResultInfo {...props} />
-              <ResultBody {...props} />
-            </>
-          )}
+          component={props => <MoviePageLayout {...props} />}
         />
         <Route component={Error} />
       </Switch>
