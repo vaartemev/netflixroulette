@@ -10,15 +10,16 @@ const sortBy = [
   { key: 'rating', title: 'rating' },
 ];
 
-export const ResultInfo = () => {
+export const ResultInfo = ({ match }) => {
   const { foundedMovies, genres, movie } = useSelector(state => ({
     foundedMovies: state.movie.movies.length,
     genres: state.movie.movie.genres,
     movie: state.movie.movie,
   }));
+
   return (
     <nav className="additional">
-      {'genres' in movie ? (
+      {match.path === '/film/:id' && 'genres' in movie ? (
         <>
           <span className="founded">Movies by {genres[0]} genre</span>
         </>
