@@ -59,6 +59,7 @@ export const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         id: payload.id,
+        searchBy: 'genres',
         isFetching: true,
       };
     case GET_MOVIE_DETAILS_BY_ID_SUCCESS:

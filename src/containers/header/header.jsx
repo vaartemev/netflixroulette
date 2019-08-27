@@ -4,6 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import { MovieDetails } from '../../components/movieDetails/movieDetails';
 import { Logo } from '../../components/logo/logo';
 import { Button, ButtonType } from '../../components/button/button';
+import { SearchField } from '../../components/searchField/searchField';
 import {
   getMoviesBySearchQuery,
   setSearchValue,
@@ -19,7 +20,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleOnEnterPress: (value, key, searchFilter, sortFilter) => {
+  handleOnEnterPress: (key, value, searchFilter, sortFilter) => {
     if (key === 'Enter') {
       dispatch(getMoviesBySearchQuery(value, searchFilter, sortFilter));
     }

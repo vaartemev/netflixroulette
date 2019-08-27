@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { setSortFilter } from '../../actions';
 import { ButtonType } from '../../components/button/button';
 import { RadioButton } from '../radioButton';
+import { MoviesByGenre } from '../../components/moviesByGenre/moviesByGenre';
 import './resultInfo.scss';
 
 const sortBy = [
@@ -11,18 +12,14 @@ const sortBy = [
 ];
 
 export const ResultInfo = ({ match }) => {
-  const { foundedMovies, genres, movie } = useSelector(state => ({
+  const { foundedMovies, genre } = useSelector(state => ({
+    genre: state.movie.searchQuery,
     foundedMovies: state.movie.movies.length,
-    genres: state.movie.movie.genres,
-    movie: state.movie.movie,
   }));
-
   return (
     <nav className="additional">
-      {match.path === '/film/:id' && 'genres' in movie ? (
-        <>
-          <span className="founded">Movies by {genres[0]} genre</span>
-        </>
+      {match ? (
+        <MoviesByGenre genre={genre} />
       ) : (
         <>
           <span className="founded">{foundedMovies} movies founded</span>

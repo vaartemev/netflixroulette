@@ -42,11 +42,12 @@ export const getMoviesBySearchQueryFailure = () => {
   };
 };
 
-export const getMovieDetailsById = id => {
+export const getMovieDetailsById = (id, searchBy) => {
   return {
     type: GET_MOVIE_DETAILS_BY_ID,
     payload: {
       id,
+      searchBy,
     },
   };
 };

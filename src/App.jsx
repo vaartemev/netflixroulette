@@ -1,13 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Header } from './containers/header/header';
-import { ResultInfo } from './containers/resultInfo/resultInfo';
-import { ResultBody } from './containers/resultBody/resultBody';
 import { Footer } from './components/footer/footer';
 import { ErrorBoundary } from './containers/errorBoundary/errorBoundary';
-import { Error } from './components/error/error';
-import { MoviePageLayout } from './pages/moviePage/moviePageLayout/moviePageLayout';
-import { SearchPageLayout } from './pages/searchPage/searchPageLayout';
+import { PageNotFound } from './pages/pageNotFound/pageNotFound';
+import { MainLayout } from './pages/mainLayout/mainLayout';
+import { MoviePage } from './pages/moviePage/moviePage';
 
 export const App = () => {
   return (
@@ -16,13 +14,10 @@ export const App = () => {
         <Route path="/" exact component={props => <Header {...props} />} />
         <Route
           path="/search/:searchValue"
-          component={props => <SearchPageLayout {...props} />}
+          component={props => <MainLayout {...props} />}
         />
-        <Route
-          path="/film/:id"
-          component={props => <MoviePageLayout {...props} />}
-        />
-        <Route component={Error} />
+        <Route path="/film/:id" component={props => <MoviePage {...props} />} />
+        <Route component={PageNotFound} />
       </Switch>
       <Footer />
     </ErrorBoundary>
