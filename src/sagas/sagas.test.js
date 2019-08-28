@@ -6,7 +6,7 @@ import {
   getMovieDetailsByIdSuccess,
   getMovieDetailsByIdFailure,
 } from '../actions';
-import * as api from '../utils';
+import * as api from '../api';
 
 async function recordSaga(saga, initialAction) {
   const dispatched = [];

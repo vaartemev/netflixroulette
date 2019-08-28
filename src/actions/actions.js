@@ -8,7 +8,7 @@ import {
   SET_SEARCH_FILTER,
   SET_SORT_FILTER,
   SET_SEARCH_VALUE,
-} from '../constants';
+} from './actionTypes';
 
 export const getMoviesBySearchQuery = (
   search,

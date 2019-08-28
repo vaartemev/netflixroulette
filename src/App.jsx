@@ -6,6 +6,9 @@ import { ErrorBoundary } from './containers/errorBoundary/errorBoundary';
 import { PageNotFound } from './pages/pageNotFound/pageNotFound';
 import { SearchPage } from './pages/searchPage/searchPage';
 import { MoviePage } from './pages/moviePage/moviePage';
+import { configureAxios } from './api';
+
+configureAxios();
 
 export const App = () => {
   return (
