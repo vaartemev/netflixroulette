@@ -1,0 +1,18 @@
+.header {
+	background-image: url(http://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/51ce6099e4b0d911b4489b79/5cc78e0915fcc01bd0bd522c/1557059430946/all_marvel_movie_poster.jpg?format=1500w);
+	background-size: cover;
+	background-color: rgba(0, 0, 0, .9);
+	padding: 20px 70px 0;
+	position: relative;
+
+	&:before {
+		content: "";
+		z-index: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: linear-gradient(to bottom, #333333cd, #8c0000cd);
+	}
+}

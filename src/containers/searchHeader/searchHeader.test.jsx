@@ -1,15 +1,15 @@
 import { mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { Provider } from 'react-redux';
-import { Header } from './header';
+import { SearchHeader } from './searchHeader';
 import { configureStore } from '../../store';
 
 const store = configureStore();
 
-describe('Header', () => {
+describe('searchHeader', () => {
   const output = mount(
     <Provider store={store}>
-      <Header />
+      <SearchHeader />
     </Provider>,
   );
   it('Render correctly', () => {

@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Header>
+    <div
+      className="header"
+    >
+      <Logo
+        text="netflixroulette"
+      >
+        <div
+          className="logo"
+        >
+           
+          netflixroulette
+           
+        </div>
+      </Logo>
+      <SearchField
+        handleOnEnterPress={[Function]}
+        handleOnInput={[Function]}
+        handleOnSearchClick={[Function]}
+        searchFilter="title"
+        searchValue=""
+        sortFilter="release_date"
+      >
+        <div
+          className="search"
+        >
+          <div
+            className="search__title"
+          >
+            Find your movie
+          </div>
+          <Input
+            handleOnEnterPress={[Function]}
+            handleOnInput={[Function]}
+            placeholderText="What do you what find?"
+            searchValue=""
+          >
+            <label
+              className="search-field__wrapper"
+            >
+              <input
+                className="search__field"
+                onInput={[Function]}
+                onKeyDown={[Function]}
+                placeholder="What do you what find?"
+                type="text"
+              />
+            </label>
+          </Input>
+          <SearchControls
+            handleOnSearchClick={[Function]}
+            searchFilter="title"
+            searchValue=""
+            sortFilter="release_date"
+          >
+            <div
+              className="filters"
+            >
+              <div
+                className="filters__title"
+              >
+                Search by
+              </div>
+              <div
+                className="filters__buttons"
+              >
+                <RadioButton
+                  filter={[Function]}
+                  filters={
+                    Array [
+                      Object {
+                        "key": "title",
+                        "title": "Title",
+                      },
+                      Object {
+                        "key": "genres",
+                        "title": "Genre",
+                      },
+                    ]
+                  }
+                  type="filter"
+                >
+                  <Button
+                    checked={true}
+                    handleOnClick={[Function]}
+                    key="title"
+                    text="Title"
+                    type="filter"
+                  >
+                    <button
+                      className="button button__filter-active button__filter"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Title
+                    </button>
+                  </Button>
+                  <Button
+                    checked={false}
+                    handleOnClick={[Function]}
+                    key="genres"
+                    text="Genre"
+                    type="filter"
+                  >
+                    <button
+                      className="button button__filter"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Genre
+                    </button>
+                  </Button>
+                </RadioButton>
+              </div>
+              <Button
+                handleOnClick={[Function]}
+                text="Search"
+                type="search"
+              >
+                <button
+                  className="button button__search"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Search
+                </button>
+              </Button>
+            </div>
+          </SearchControls>
+        </div>
+      </SearchField>
+    </div>
+  </Header>
+</Provider>
+`;

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
+import { withRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Preloader } from '../../components/preloader/preloader';
 import { MovieItem } from '../../components/movieItem/movieItem';
@@ -7,7 +8,7 @@ import { NoFilmsFound } from '../../components/noFilmsFound/noFilmsFound';
 import { getMovieDetailsById, getMoviesBySearchQuery } from '../../actions';
 import './resultBody.scss';
 
-export const ResultBody = ({ match }) => {
+export const ResultBody = withRouter(({ match }) => {
   const { movies, isFetching } = useSelector(state => ({
     movies: state.movie.movies,
     isFetching: state.movie.isFetching,
@@ -47,4 +48,4 @@ export const ResultBody = ({ match }) => {
           ))}
     </div>
   );
-};
+});

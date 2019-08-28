@@ -1,38 +1,20 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Header } from './containers/header/header';
-import { ResultInfo } from './containers/resultInfo/resultInfo';
-import { ResultBody } from './containers/resultBody/resultBody';
 import { Footer } from './components/footer/footer';
+import { SearchHeader } from './containers/searchHeader/searchHeader';
 import { ErrorBoundary } from './containers/errorBoundary/errorBoundary';
-import { Error } from './components/error/error';
+import { PageNotFound } from './pages/pageNotFound/pageNotFound';
+import { SearchPage } from './pages/searchPage/searchPage';
+import { MoviePage } from './pages/moviePage/moviePage';
 
 export const App = () => {
   return (
     <ErrorBoundary>
       <Switch>
-        <Route path="/" exact component={props => <Header {...props} />} />
-        <Route
-          path="/search/:searchValue"
-          component={props => (
-            <>
-              <Header {...props} />
-              <ResultInfo {...props} />
-              <ResultBody {...props} />
-            </>
-          )}
-        />
-        <Route
-          path="/film/:id"
-          component={props => (
-            <>
-              <Header {...props} />
-              <ResultInfo {...props} />
-              <ResultBody {...props} />
-            </>
-          )}
-        />
-        <Route component={Error} />
+        <Route path="/" exact component={SearchHeader} />
+        <Route path="/search/:searchValue" component={SearchPage} />
+        <Route path="/film/:id" component={MoviePage} />
+        <Route component={PageNotFound} />
       </Switch>
       <Footer />
     </ErrorBoundary>

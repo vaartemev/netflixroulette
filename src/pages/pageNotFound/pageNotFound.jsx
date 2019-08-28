@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../button/button';
+import { Button } from '../../components/button/button';
 
-import './error.scss';
+import './pageNotFound.scss';
 
-export const Error = () => {
+export const PageNotFound = () => {
   return (
     <div className="page-404">
       <h1>Oh no! This page was not found :(</h1>
