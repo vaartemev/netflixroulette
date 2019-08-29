@@ -2,15 +2,13 @@ import { put, call, all, takeEvery } from 'redux-saga/effects';
 import {
   GET_MOVIE_DETAILS_BY_ID,
   GET_MOVIES_BY_SEARCH_QUERY,
-} from '../actions/actionTypes';
-import { fetchMovieById, fetchMovies } from '../api';
-import {
   getMoviesBySearchQuerySuccess,
   getMoviesBySearchQueryFailure,
   getMovieDetailsByIdSuccess,
   getMovieDetailsByIdFailure,
   getMoviesBySearchQuery,
 } from '../actions';
+import { fetchMovieById, fetchMovies } from '../api';
 
 export function* getMoviesBySearch(action) {
   try {

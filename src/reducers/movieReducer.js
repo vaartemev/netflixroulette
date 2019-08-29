@@ -8,7 +8,7 @@ import {
   GET_MOVIES_BY_SEARCH_QUERY,
   GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
   GET_MOVIES_BY_SEARCH_QUERY_FAILURE,
-} from '../actions/actionTypes';
+} from '../actions';
 
 export const initialState = {
   movies: [],
