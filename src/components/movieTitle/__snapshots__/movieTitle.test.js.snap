@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Movie Title renders correctly 1`] = `
-<h2
-  className="string"
->
-  string2
-</h2>
-`;

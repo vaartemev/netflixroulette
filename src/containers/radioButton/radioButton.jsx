@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Button, ButtonType } from '../../components/button/button';
+import { Button, ButtonType } from '../../components';
 
 export const RadioButton = ({ type, filters, filter }) => {
   const { searchBy, sortBy } = useSelector(state => ({

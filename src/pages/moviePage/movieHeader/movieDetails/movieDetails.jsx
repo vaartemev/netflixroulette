@@ -1,8 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MovieTitle } from '../movieTitle/movieTitle';
-import { Thumbnail } from '../thumbnail/thumbnail';
+import { MovieTitle, Thumbnail } from '../../../../components';
 
 import './movieDetails.scss';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { setSortFilter } from '../../actions';
-import { ButtonType } from '../../components/button/button';
+import { ButtonType } from '../../components';
 import { RadioButton } from '../radioButton';
 import './resultInfo.scss';
 

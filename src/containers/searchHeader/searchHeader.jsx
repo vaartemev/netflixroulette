@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Logo } from '../../components/logo/logo';
-import { SearchField } from '../../components/searchField/searchField';
+import { Logo, SearchField } from '../../components';
 import { getMoviesBySearchQuery, setSearchValue } from '../../actions';
 import './searchHeader.scss';
 

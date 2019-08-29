@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { MovieDetails } from '../../../components/movieDetails/movieDetails';
-import { Logo } from '../../../components/logo/logo';
-import { Button, ButtonType } from '../../../components/button/button';
+import { MovieDetails } from './movieDetails/movieDetails';
+import { Logo, Button, ButtonType } from '../../../components';
+
 import { getMovieDetailsById } from '../../../actions';
 import './movieHeader.scss';
 

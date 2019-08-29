@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { withRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Preloader } from '../../components/preloader/preloader';
-import { MovieItem } from '../../components/movieItem/movieItem';
-import { NoFilmsFound } from '../../components/noFilmsFound/noFilmsFound';
+import { Preloader, MovieItem, NoFilmsFound } from '../../components';
+
 import { getMovieDetailsById, getMoviesBySearchQuery } from '../../actions';
 import './resultBody.scss';
 
