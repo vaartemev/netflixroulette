@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Button, ButtonType } from '../../button/button';
+import { Button, ButtonType } from '../../button';
 import { setSearchFilter } from '../../../actions';
-import { RadioButton } from '../../../containers/radioButton';
+import { RadioButton } from '../../../containers';
 
 import './searchControls.scss';
 

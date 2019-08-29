@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { MovieDetails } from './movieDetails/movieDetails';
+import { MovieDetails } from './movieDetails';
 import { Logo, Button, ButtonType } from '../../../components';
 
 import { getMovieDetailsById } from '../../../actions';

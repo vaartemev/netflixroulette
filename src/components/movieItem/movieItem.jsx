@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { MovieTitle } from '../movieTitle/movieTitle';
-import { Thumbnail } from '../thumbnail/thumbnail';
+import { MovieTitle } from '../movieTitle';
+import { Thumbnail } from '../thumbnail';
 
 import './movieItem.scss';
 
