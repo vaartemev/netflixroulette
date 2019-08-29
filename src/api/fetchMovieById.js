@@ -2,8 +2,7 @@ import 'regenerator-runtime/runtime';
 import axios from 'axios';
 
 export const fetchMovieById = async params => {
-  const movie = await axios.get(`/${params}`).then(response => {
-    return response.data;
-  });
+  const res = await axios.get(`/${params}`);
+  const movie = await res.data;
   return movie;
 };

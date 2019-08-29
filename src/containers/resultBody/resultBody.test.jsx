@@ -1,3 +1,5 @@
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { Provider } from 'react-redux';
@@ -8,9 +10,11 @@ const store = configureStore();
 
 describe('ResultBody', () => {
   const output = mount(
-    <Provider store={store}>
-      <ResultBody />
-    </Provider>,
+    <Router>
+      <Provider store={store}>
+        <ResultBody />
+      </Provider>
+    </Router>,
   );
   it('Render correctly', () => {
     expect(shallowToJson(output)).toMatchSnapshot();

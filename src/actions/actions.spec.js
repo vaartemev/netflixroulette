@@ -1,5 +1,5 @@
 import * as actions from './index';
-import * as types from '../constants';
+import * as types from './actionTypes';
 
 describe('Actions test', () => {
   it('should create an action to get movies by search query', () => {

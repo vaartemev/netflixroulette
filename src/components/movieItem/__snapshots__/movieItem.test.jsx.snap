@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Item renders correctly 1`] = `
+<Link
+  to="/film/undefined"
+>
+  <div
+    className="movie"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    <Thumbnail
+      className="movie__thumbnail"
+      src="string1"
+    />
+    <div
+      className="movie__info"
+    >
+      <MovieTitle
+        className="movie__title"
+        title="string2"
+      />
+      <span
+        className="movie__year"
+      >
+        NaN
+      </span>
+      <div
+        className="movie__genre"
+      >
+        1, 2
+      </div>
+    </div>
+  </div>
+</Link>
+`;

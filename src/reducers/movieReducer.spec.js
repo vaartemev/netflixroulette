@@ -1,5 +1,5 @@
 import { movieReducer, initialState } from './movieReducer';
-import * as types from '../constants';
+import * as types from '../actions';
 
 describe('Movie reducer', () => {
   it('Should handle get movies by search query', () => {

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Controls renders correctly 1`] = `
+<div
+  className="filters"
+>
+  <div
+    className="filters__title"
+  >
+    Search by
+  </div>
+  <div
+    className="filters__buttons"
+  >
+    <RadioButton
+      filter={[Function]}
+      filters={
+        Array [
+          Object {
+            "key": "title",
+            "title": "Title",
+          },
+          Object {
+            "key": "genres",
+            "title": "Genre",
+          },
+        ]
+      }
+      type="filter"
+    />
+  </div>
+  <Link
+    to="/search/string2"
+  >
+    <Button
+      handleOnClick={[Function]}
+      text="Search"
+      type="search"
+    />
+  </Link>
+</div>
+`;

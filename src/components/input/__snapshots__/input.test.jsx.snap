@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> Should render correct 1`] = `
+<label
+  className="search-field__wrapper"
+  htmlFor="input"
+>
+  <input
+    className="search__field"
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    type="text"
+  />
+</label>
+`;

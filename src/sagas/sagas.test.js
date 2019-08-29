@@ -8,6 +8,8 @@ import {
 } from '../actions';
 import * as api from '../api';
 
+console.log(api);
+
 async function recordSaga(saga, initialAction) {
   const dispatched = [];
 

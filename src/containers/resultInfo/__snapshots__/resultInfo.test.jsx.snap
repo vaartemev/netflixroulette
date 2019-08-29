@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultInfo Render correctly 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <withRouter()>
+        <Component
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          match={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+        >
+          <nav
+            className="additional"
+          >
+            <span
+              className="founded"
+            >
+              0
+               movies founded
+            </span>
+            <div
+              className="sort"
+            >
+              <span
+                className="sort__title"
+              >
+                Sort by
+              </span>
+              <RadioButton
+                filter={[Function]}
+                filters={
+                  Array [
+                    Object {
+                      "key": "release_date",
+                      "title": "release date",
+                    },
+                    Object {
+                      "key": "rating",
+                      "title": "rating",
+                    },
+                  ]
+                }
+              >
+                <Button
+                  checked={true}
+                  handleOnClick={[Function]}
+                  key="release_date"
+                  text="release date"
+                >
+                  <button
+                    className="button button__sort-active button__sort"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    release date
+                  </button>
+                </Button>
+                <Button
+                  checked={false}
+                  handleOnClick={[Function]}
+                  key="rating"
+                  text="rating"
+                >
+                  <button
+                    className="button button__sort"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    rating
+                  </button>
+                </Button>
+              </RadioButton>
+            </div>
+          </nav>
+        </Component>
+      </withRouter()>
+    </Provider>
+  </Router>
+</BrowserRouter>
+`;

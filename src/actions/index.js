@@ -9,3 +9,4 @@ export {
   setSortFilter,
   setSearchValue,
 } from './actions';
+export * from './actionTypes';
