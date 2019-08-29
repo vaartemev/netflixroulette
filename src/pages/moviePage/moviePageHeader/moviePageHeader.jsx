@@ -5,7 +5,7 @@ import { MovieDetails } from './movieDetails/movieDetails';
 import { Logo, Button, ButtonType } from '../../../components';
 
 import { getMovieDetailsById } from '../../../actions';
-import './movieHeader.scss';
+import './moviePageHeader.scss';
 
 const mapStateToProps = state => ({
   movie: state.movie.movie,
@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export const MovieHeader = withRouter(
+export const MoviePageHeader = withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps,

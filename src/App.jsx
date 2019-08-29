@@ -1,12 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Footer } from './components';
-import { SearchHeader } from './containers/searchHeader/searchHeader';
-import { ErrorBoundary } from './containers/errorBoundary/errorBoundary';
-import { PageNotFound } from './pages/pageNotFound/pageNotFound';
-import { SearchPage } from './pages/searchPage/searchPage';
-import { MoviePage } from './pages/moviePage/moviePage';
 import { configureAxios } from './api';
+import { Footer } from './components';
+import { SearchPageHeader, ErrorBoundary } from './containers';
+import { PageNotFound, SearchPage, MoviePage } from './pages';
 
 configureAxios();
 
@@ -14,7 +11,7 @@ export const App = () => {
   return (
     <ErrorBoundary>
       <Switch>
-        <Route path="/" exact component={SearchHeader} />
+        <Route path="/" exact component={SearchPageHeader} />
         <Route path="/search/:searchValue" component={SearchPage} />
         <Route path="/film/:id" component={MoviePage} />
         <Route component={PageNotFound} />

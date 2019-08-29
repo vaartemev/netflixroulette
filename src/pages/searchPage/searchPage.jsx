@@ -1,12 +1,10 @@
 import React from 'react';
-import { SearchHeader } from '../../containers/searchHeader/searchHeader';
-import { ResultInfo } from '../../containers/resultInfo/resultInfo';
-import { ResultBody } from '../../containers/resultBody/resultBody';
+import { SearchPageHeader, ResultInfo, ResultBody } from '../../containers';
 
 export const SearchPage = () => {
   return (
     <>
-      <SearchHeader />
+      <SearchPageHeader />
       <ResultInfo />
       <ResultBody />
     </>

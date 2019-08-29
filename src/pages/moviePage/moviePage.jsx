@@ -1,12 +1,11 @@
 import React from 'react';
-import { ResultInfo } from '../../containers/resultInfo/resultInfo';
-import { ResultBody } from '../../containers/resultBody/resultBody';
-import { MovieHeader } from './movieHeader';
+import { ResultInfo, ResultBody } from '../../containers';
+import { MoviePageHeader } from './moviePageHeader';
 
 export const MoviePage = () => {
   return (
     <>
-      <MovieHeader />
+      <MoviePageHeader />
       <ResultInfo />
       <ResultBody />
     </>

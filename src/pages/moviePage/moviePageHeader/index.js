@@ -1,0 +1,1 @@
+export { MoviePageHeader } from './moviePageHeader';
