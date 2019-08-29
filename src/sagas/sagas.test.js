@@ -8,7 +8,7 @@ import {
 } from '../actions';
 import * as api from '../api';
 
-console.log(api);
+jest.mock('../api');
 
 async function recordSaga(saga, initialAction) {
   const dispatched = [];
@@ -27,10 +27,10 @@ async function recordSaga(saga, initialAction) {
 test('Should load movies and put them in case of success', async () => {
   const initialAction = { search: 'he' };
   const mockedData = { data: 'some value' };
-  api.fetchMovies = jest.fn(() => Promise.resolve(mockedData));
+  api.fetchMovies.mockImplementation(() => Promise.resolve(mockedData));
 
   const dispatched = await recordSaga(getMoviesBySearch, initialAction);
-  expect(api.fetchMovies.mock.calls.length).toBe(1);
+  expect(api.fetchMovies).toBeCalled();
   expect(dispatched).toContainEqual(
     getMoviesBySearchQuerySuccess(mockedData.data),
   );
@@ -38,10 +38,10 @@ test('Should load movies and put them in case of success', async () => {
 
 test('Should handle error in case of fail', async () => {
   const initialAction = { search: 'he' };
-  api.fetchMovies = jest.fn(() => Promise.reject());
+  api.fetchMovies.mockImplementation(() => Promise.reject());
 
   const dispatched = await recordSaga(getMoviesBySearch, initialAction);
-  expect(api.fetchMovies.mock.calls.length).toBe(1);
+  expect(api.fetchMovies).toBeCalled();
   expect(dispatched).toContainEqual(getMoviesBySearchQueryFailure());
 });
 
@@ -49,18 +49,17 @@ test('Should load movie details and put them to case of success', async () => {
   const initialAction = { payload: { id: 5 } };
   const mockedData = { genres: ['some', 'value'] };
 
-  api.fetchMovieById = jest.fn(() => Promise.resolve(mockedData));
+  api.fetchMovieById.mockImplementation(() => Promise.resolve(mockedData));
 
   const dispatched = await recordSaga(getMovieDetails, initialAction);
-  expect(api.fetchMovieById.mock.calls.length).toBe(1);
+  expect(api.fetchMovieById).toBeCalled();
   expect(dispatched).toContainEqual(getMovieDetailsByIdSuccess(mockedData));
 });
 
 test('Should handle error in case of fail', async () => {
   const initialAction = { payload: { id: 5 } };
-  api.fetchMovieById = jest.fn(() => Promise.reject());
-
+  api.fetchMovieById.mockImplementation(() => Promise.reject());
   const dispatched = await recordSaga(getMovieDetails, initialAction);
-  expect(api.fetchMovieById.mock.calls.length).toBe(1);
+  expect(api.fetchMovieById).toBeCalled();
   expect(dispatched).toContainEqual(getMovieDetailsByIdFailure());
 });
