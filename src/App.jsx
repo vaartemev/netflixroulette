@@ -1,11 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { configureAxios } from './api';
 import { Footer } from './components';
 import { SearchPageHeader, ErrorBoundary } from './containers';
 import { PageNotFound, SearchPage, MoviePage } from './pages';
-
-configureAxios();
 
 export const App = () => {
   return (
