@@ -5,8 +5,8 @@ import { Button, ButtonType } from '../../components';
 
 export const RadioButton = ({ type, filters, filter }) => {
   const { searchBy, sortBy } = useSelector(state => ({
-    searchBy: state.movie.searchBy,
-    sortBy: state.movie.sortBy,
+    searchBy: state.movie.get('searchBy'),
+    sortBy: state.movie.get('sortBy'),
   }));
 
   const dispatch = useDispatch();

@@ -8,7 +8,7 @@ import { getMovieDetailsById } from '../../../actions';
 import './moviePageHeader.scss';
 
 const mapStateToProps = state => ({
-  movie: state.movie.movie,
+  movie: state.movie.get('movie'),
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,14 +1,13 @@
 import React from 'react';
-import { toJS } from 'immutable';
 import { connect } from 'react-redux';
 import { Logo, SearchField } from '../../components';
 import { getMoviesBySearchQuery, setSearchValue } from '../../actions';
 import './searchPageHeader.scss';
 
 const mapStateToProps = state => ({
-  searchValue: state.getIn(['movie', 'searchQuery']),
-  searchFilter: state.movie.searchBy,
-  sortFilter: state.movie.sortBy,
+  searchValue: state.movie.get('searchQuery'),
+  searchFilter: state.movie.get('searchBy'),
+  sortFilter: state.movie.get('sortBy'),
 });
 
 const mapDispatchToProps = dispatch => ({

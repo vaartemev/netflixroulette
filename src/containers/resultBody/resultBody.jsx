@@ -9,8 +9,8 @@ import './resultBody.scss';
 
 export const ResultBody = withRouter(({ match }) => {
   const { movies, isFetching } = useSelector(state => ({
-    movies: state.movie.movies,
-    isFetching: state.movie.isFetching,
+    movies: state.movie.get('movies'),
+    isFetching: state.movie.get('isFetching'),
   }));
   const dispatch = useDispatch();
   const yetLoader = (condition, then, otherwise) =>

@@ -13,8 +13,8 @@ const sortBy = [
 
 export const ResultInfo = withRouter(({ match }) => {
   const { foundedMovies, genre } = useSelector(state => ({
-    foundedMovies: state.movie.movies.length,
-    genre: state.movie.searchQuery,
+    foundedMovies: state.movie.get('movies'),
+    genre: state.movie.get('searchQuery'),
   }));
 
   return (
@@ -23,7 +23,7 @@ export const ResultInfo = withRouter(({ match }) => {
         <span className="founded">Movies by {genre} genre</span>
       ) : (
         <>
-          <span className="founded">{foundedMovies} movies founded</span>
+          <span className="founded">{foundedMovies.length} movies founded</span>
           <div className="sort">
             <span className="sort__title">Sort by</span>
             <RadioButton

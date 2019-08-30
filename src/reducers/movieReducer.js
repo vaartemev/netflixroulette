@@ -20,66 +20,32 @@ export const initialState = Map({
   isFetching: false,
 });
 
-// {
-//   ...state,
-//   searchQuery: payload.search,
-//   sortBy: payload.sortBy,
-//   isFetching: true,
-// }
-
 export const movieReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case GET_MOVIES_BY_SEARCH_QUERY:
-      return state.setIn(
-        ['searchQuery', 'sortBy', 'isFetching'],
-        payload.search,
-        payload.sortBy,
-        true,
-      );
+      return state
+        .setIn(['searchQuery'], payload.search)
+        .setIn(['sortBy'], payload.sortBy)
+        .setIn(['isFetching'], true);
     case GET_MOVIES_BY_SEARCH_QUERY_SUCCESS:
-      return {
-        ...state,
-        movies: payload.movies,
-        isFetching: false,
-      };
+      return state
+        .setIn(['movies'], payload.movies)
+        .setIn(['isFetching'], false);
     case GET_MOVIES_BY_SEARCH_QUERY_FAILURE:
-      return {
-        ...state,
-        isFetching: false,
-      };
+      return state.setIn(['isFetching'], false);
     case SET_SEARCH_FILTER:
-      return {
-        ...state,
-        searchBy: payload.searchBy,
-      };
+      return state.setIn(['searchBy'], payload.searchBy);
     case SET_SORT_FILTER:
-      return {
-        ...state,
-        sortBy: payload.sortBy,
-      };
+      return state.setIn(['sortBy'], payload.sortBy);
     case SET_SEARCH_VALUE:
-      return {
-        ...state,
-        searchQuery: payload.searchValue,
-      };
+      return state.setIn(['searchQuery'], payload.searchValue);
     case GET_MOVIE_DETAILS_BY_ID:
-      return {
-        ...state,
-        id: payload.id,
-        isFetching: true,
-      };
+      return state.setIn(['id'], payload.id).setIn(['isFetching'], true);
     case GET_MOVIE_DETAILS_BY_ID_SUCCESS:
-      return {
-        ...state,
-        movie: payload.movie,
-        isFetching: false,
-      };
+      return state.setIn(['movie'], payload.movie).setIn(['isFetching'], false);
     case GET_MOVIE_DETAILS_BY_ID_FAILURE:
-      return {
-        ...state,
-        isFetching: false,
-      };
+      return state.setIn(['isFetching'], false);
 
     default:
       return state;
