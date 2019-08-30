@@ -10,7 +10,10 @@
     "lint": "eslint --fix src/",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:spec": "jest --testPathPattern=spec.js --runInBand"
+    "test:spec": "jest --testPathPattern=spec.js --runInBand",
+    "next:dev": "next",
+    "next:build": "next build",
+    "next:start": "next start"
   },
   "author": "Vladimir Artemev",
   "license": "ISC",
@@ -24,7 +27,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
-    "css-loader": "^3.0.0",
+    "css-loader": "1.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.0",
@@ -51,6 +54,8 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link": "^1.2.12",
@@ -60,6 +65,8 @@
     "graphql-anywhere": "^4.2.4",
     "graphql-tag": "^2.10.1",
     "immutable": "^4.0.0-rc.12",
+    "next": "^9.0.5",
+    "next-compose-plugins": "^2.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
