@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button, ButtonType } from '../../button';
 import { setSearchFilter } from '../../../actions';
 import { RadioButton } from '../../../containers';
@@ -28,7 +28,10 @@ export const SearchControls = ({
           filter={setSearchFilter}
         />
       </div>
-      <Link to={`/search/${searchValue}`}>
+      <Link
+        href={`/searchResult?searchValue=${searchValue}`}
+        as="/searchResult/searchValue"
+      >
         <Button
           text="Search"
           type={ButtonType.search}

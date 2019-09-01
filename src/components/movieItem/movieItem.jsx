@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { MovieTitle } from '../movieTitle';
 import { Thumbnail } from '../thumbnail';
 
@@ -8,7 +8,7 @@ import './movieItem.scss';
 
 export const MovieItem = ({ id, src, title, year, genre, handleOnClick }) => {
   return (
-    <Link to={`/film/${id}`}>
+    <Link href={`/movie?id=${id}`}>
       <div className="movie" onClick={handleOnClick} role="link" tabIndex="0">
         <Thumbnail src={src} className="movie__thumbnail" />
         <div className="movie__info">

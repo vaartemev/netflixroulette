@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import { Preloader, MovieItem, NoFilmsFound } from '../../components';
 
 import { getMovieDetailsById, getMoviesBySearchQuery } from '../../actions';
 import './resultBody.scss';
 
-export const ResultBody = withRouter(({ match }) => {
+export const ResultBody = withRouter(() => {
   const { movies, isFetching } = useSelector(state => ({
     movies: state.movie.get('movies'),
     isFetching: state.movie.get('isFetching'),
@@ -20,10 +20,13 @@ export const ResultBody = withRouter(({ match }) => {
     'content-not-found': movies.length === 0,
     'content-films-list': movies.length > 0,
   });
+  const router = useRouter();
+  const { searchValue } = router.query;
 
-  const { searchValue } = match.params;
   useEffect(() => {
-    dispatch(getMoviesBySearchQuery(searchValue));
+    if (searchValue !== 'undefined') {
+      dispatch(getMoviesBySearchQuery(searchValue));
+    }
   }, []);
 
   return (
