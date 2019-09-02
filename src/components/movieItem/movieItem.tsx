@@ -1,12 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { MovieTitle } from '../movieTitle';
 import { Thumbnail } from '../thumbnail';
 
 import './movieItem.scss';
 
-export const MovieItem = ({ id, src, title, year, genre, handleOnClick }) => {
+interface MovieItemProps {
+  id: number;
+  src: string;
+  title: string;
+  year: string;
+  genre: string;
+  handleOnClick();
+}
+
+export const MovieItem: React.FunctionComponent<MovieItemProps> = ({
+  id,
+  src,
+  title,
+  year,
+  genre,
+  handleOnClick,
+}): JSX.Element => {
   return (
     <Link href={`/movie?id=${id}`}>
       <div className="movie" onClick={handleOnClick} role="link" tabIndex="0">
@@ -19,11 +34,4 @@ export const MovieItem = ({ id, src, title, year, genre, handleOnClick }) => {
       </div>
     </Link>
   );
-};
-
-MovieItem.propTypes = {
-  src: PropTypes.string,
-  title: PropTypes.string,
-  year: PropTypes.string,
-  genre: PropTypes.array,
 };

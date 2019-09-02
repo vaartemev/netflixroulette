@@ -1,13 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './input.scss';
 
-export const Input = ({
+interface InputProps {
+  searchValue: string;
+  placeholderText: string;
+  handleOnEnterPress();
+  handleOnInput();
+}
+
+export const Input: React.FunctionComponent<InputProps> = ({
   searchValue,
   placeholderText,
   handleOnEnterPress,
   handleOnInput,
-}) => {
+}: InputProps): JSX.Element => {
   return (
     <label className="search-field__wrapper" htmlFor="input">
       <input
@@ -19,10 +25,4 @@ export const Input = ({
       />
     </label>
   );
-};
-
-Input.propTypes = {
-  searchValue: PropTypes.string,
-  placeholderText: PropTypes.string,
-  handleOnEnterPress: PropTypes.func,
 };

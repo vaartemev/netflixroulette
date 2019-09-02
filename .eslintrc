@@ -1,17 +1,17 @@
 {
-  "extends": ["airbnb", "prettier"],
-  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".jsx", ".js"]
+        "extensions": [".tsx", ".ts"]
       }
     ],
     "no-console": "off",
-    "camelcase": 0,
+    "@typescript-eslint/camelcase":"off",
     "no-underscore-dangle": 0,
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,

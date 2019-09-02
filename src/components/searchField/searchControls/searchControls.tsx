@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'next/link';
 import { Button, ButtonType } from '../../button';
 import { setSearchFilter } from '../../../actions';
 import { RadioButton } from '../../../containers';
@@ -12,13 +10,19 @@ const filters = [
   { key: 'genres', title: 'Genre' },
 ];
 
+interface SearchControlsProps {
+  searchValue: string;
+  searchFilter: string;
+  sortFilter: string;
+  handleOnSearchClick();
+}
+
 export const SearchControls = ({
   searchValue,
   searchFilter,
   sortFilter,
   handleOnSearchClick,
-}) => {
-  const ref = React.createRef();
+}: SearchControlsProps): JSX.Element => {
   return (
     <div className="filters">
       <div className="filters__title">Search by</div>
@@ -32,7 +36,6 @@ export const SearchControls = ({
 
       <Button
         text="Search"
-        ref={ref}
         href={`/searchResult?searchValue=${searchValue}`}
         type={ButtonType.search}
         handleOnClick={() =>
@@ -41,11 +44,4 @@ export const SearchControls = ({
       />
     </div>
   );
-};
-
-SearchControls.propTypes = {
-  searchValue: PropTypes.string,
-  searchFilter: PropTypes.string,
-  sortFilter: PropTypes.string,
-  handleOnSearchClick: PropTypes.func,
 };

@@ -7,7 +7,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx|js$/,
+        test: /\.(jsx|js|ts|tsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
@@ -62,6 +62,16 @@ module.exports = {
   watch: true,
   devtool: 'cheap-module-eval-source-map',
   resolve: {
-    extensions: ['.webpack.js', '.js', '.jsx', '.json', '.sass', 'scss', 'css'],
+    extensions: [
+      '.webpack.js',
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.json',
+      '.sass',
+      'scss',
+      'css',
+    ],
   },
 };

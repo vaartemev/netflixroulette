@@ -1,9 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { SearchControls } from './searchControls';
 import { Input } from '../input';
 
 import './searchField.scss';
+
+interface SearchFieldProps {
+  handleOnEnterPress();
+  handleOnInput();
+  handleOnSearchClick();
+  searchValue: string;
+  searchFilter: string;
+  sortFilter: string;
+}
 
 export const SearchField = ({
   handleOnEnterPress,
@@ -12,7 +20,7 @@ export const SearchField = ({
   searchValue,
   searchFilter,
   sortFilter,
-}) => {
+}: SearchFieldProps): JSX.Element => {
   return (
     <div className="search">
       <div className="search__title">Find your movie</div>
@@ -30,13 +38,4 @@ export const SearchField = ({
       />
     </div>
   );
-};
-
-SearchField.propTypes = {
-  handleOnEnterPress: PropTypes.func,
-  handleOnInput: PropTypes.func,
-  handleOnSearchClick: PropTypes.func,
-  searchValue: PropTypes.string,
-  searchFilter: PropTypes.string,
-  sortFilter: PropTypes.string,
 };
