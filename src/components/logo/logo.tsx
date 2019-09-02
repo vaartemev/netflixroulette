@@ -5,8 +5,8 @@ interface LogoProps {
   text: string;
 }
 
-export const Logo: React.FunctionComponent<LogoProps> = ({
+export const Logo: React.FC<LogoProps> = ({
   text,
-}: LogoProps): JSX.Element => {
+}) => {
   return <div className="logo">{text}</div>;
 };

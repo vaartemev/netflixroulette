@@ -8,12 +8,12 @@ interface InputProps {
   handleOnInput();
 }
 
-export const Input: React.FunctionComponent<InputProps> = ({
+export const Input: React.FC<InputProps> = ({
   searchValue,
   placeholderText,
   handleOnEnterPress,
   handleOnInput,
-}: InputProps): JSX.Element => {
+}) => {
   return (
     <label className="search-field__wrapper" htmlFor="input">
       <input

@@ -13,14 +13,14 @@ interface SearchFieldProps {
   sortFilter: string;
 }
 
-export const SearchField = ({
+export const SearchField: React.FC<SearchFieldProps> = ({
   handleOnEnterPress,
   handleOnInput,
   handleOnSearchClick,
   searchValue,
   searchFilter,
   sortFilter,
-}: SearchFieldProps): JSX.Element => {
+}) => {
   return (
     <div className="search">
       <div className="search__title">Find your movie</div>

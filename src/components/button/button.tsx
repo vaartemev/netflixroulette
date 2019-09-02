@@ -18,13 +18,13 @@ interface ButtonProps {
   handleOnClick();
 }
 
-export const Button: React.FunctionComponent<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   text,
   checked,
   handleOnClick,
   type = ButtonType.sort,
   href,
-}: ButtonProps): JSX.Element => {
+}) => {
   const resultClass = classNames('button', {
     'button__filter-active': checked && type === ButtonType.filter,
     'button__sort-active': checked && type === ButtonType.sort,

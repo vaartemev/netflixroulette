@@ -10,21 +10,21 @@ interface MovieItemProps {
   src: string;
   title: string;
   year: string;
-  genre: string;
+  genre: Array<string>;
   handleOnClick();
 }
 
-export const MovieItem: React.FunctionComponent<MovieItemProps> = ({
+export const MovieItem: React.FC<MovieItemProps> = ({
   id,
   src,
   title,
   year,
   genre,
   handleOnClick,
-}): JSX.Element => {
+}) => {
   return (
     <Link href={`/movie?id=${id}`}>
-      <div className="movie" onClick={handleOnClick} role="link" tabIndex="0">
+      <div className="movie" onClick={handleOnClick} role="link" tabIndex={0}>
         <Thumbnail src={src} className="movie__thumbnail" />
         <div className="movie__info">
           <MovieTitle className="movie__title" title={title} />

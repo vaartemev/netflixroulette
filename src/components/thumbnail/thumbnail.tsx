@@ -7,6 +7,6 @@ interface ThumbnailProps {
   className: string;
 }
 
-export const Thumbnail = ({ src, className }: ThumbnailProps): JSX.Element => {
+export const Thumbnail: React.FC<ThumbnailProps> = ({ src, className }) => {
   return <img src={src} alt="" className={className} />;
 };
