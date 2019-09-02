@@ -14,7 +14,7 @@ const fetchMoviesQuery = gql`
 
 export const fetchMovies = async params => {
   const searchQuery = `${stringify(params)}`;
-
+  console.log(searchQuery);
   const movies = await client.query({
     query: fetchMoviesQuery,
     variables: { searchQuery },

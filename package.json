@@ -13,7 +13,7 @@
     "test:spec": "jest --testPathPattern=spec.js --runInBand",
     "next:dev": "node server.js",
     "next:build": "next build",
-    "next:start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js"
   },
   "author": "Vladimir Artemev",
   "license": "ISC",

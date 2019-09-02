@@ -1,5 +1,3 @@
-// const cacheableResponse = require('cacheable-response');
-
 const express = require('express');
 const next = require('next');
 
@@ -15,22 +13,20 @@ app.prepare().then(() => {
     res.redirect('/search');
   });
 
-  server.get('/searchResult/:searchValue', (req, res) => {
-    console.log('searchResult', req.params.searchValue);
-    return app.render(req, res, '/searchResult', {
-      searchValue: req.params.searchValue,
+  server.get('/searchResult/:search', (req, res) => {
+    return res.render(req, res, '/searchResult', {
+      searchValue: req.params.search,
     });
   });
 
   server.get('/search', (req, res) => {
-    app.render(req, res, '/search', {
-      searchValue: req.params.searchValue,
+    return app.render(req, res, '/searchResult', {
+      searchValue: req.params.search,
     });
   });
 
   server.get('/movie/:id', (req, res) => {
-    console.log('movie', req.query.id);
-    app.render(req, res, '/movie', { id: req.query.id });
+    return app.render(req, res, '/movie', { id: req.query.id });
   });
 
   server.get('*', (req, res) => {
