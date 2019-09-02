@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, createRef } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, useRouter } from 'next/router';
 import Link from 'next/link';
+import { useRouter, withRouter } from 'next/router';
+
 import { MovieDetails } from './movieDetails';
 import { Logo, Button, ButtonType } from '../../../components';
 
@@ -23,22 +24,26 @@ export const MoviePageHeader = withRouter(
     mapStateToProps,
     mapDispatchToProps,
   )(({ movie, getMovieDetails }) => {
+    const ref = createRef();
     const router = useRouter();
     const { id } = router.query;
     useEffect(() => {
       getMovieDetails(id);
-    }, []);
+    });
+
     return (
       <div className="header">
-        <Link href="localhost:3000/search">
-          <li>aaaaaa</li>
-        </Link>
         <Logo text="netflixroulette" />
+
         {Object.keys(movie).length && (
           <>
-            <Link href="/">
-              <Button type={ButtonType.searchLink} text="Search" />
-            </Link>
+            <Button
+              type={ButtonType.searchLink}
+              ref={ref}
+              href="/search"
+              text="Search"
+            />
+
             <MovieDetails movie={movie} />
           </>
         )}

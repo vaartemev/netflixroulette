@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
-import { withRouter, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import { Preloader, MovieItem, NoFilmsFound } from '../../components';
 
 import { getMovieDetailsById, getMoviesBySearchQuery } from '../../actions';
 import './resultBody.scss';
 
-export const ResultBody = withRouter(() => {
+export const ResultBody = () => {
   const { movies, isFetching } = useSelector(state => ({
     movies: state.movie.get('movies'),
     isFetching: state.movie.get('isFetching'),
   }));
+
   const dispatch = useDispatch();
   const yetLoader = (condition, then, otherwise) =>
     condition ? then : otherwise;
@@ -50,4 +51,4 @@ export const ResultBody = withRouter(() => {
           ))}
     </div>
   );
-});
+};

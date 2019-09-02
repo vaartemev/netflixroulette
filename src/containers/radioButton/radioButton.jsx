@@ -23,6 +23,7 @@ export const RadioButton = ({ type, filters, filter }) => {
       <Button
         key={item.key}
         type={type}
+        href=""
         text={item.title}
         checked={checkActiveButton(type, item.key)}
         handleOnClick={() => dispatch(filter(item.key))}

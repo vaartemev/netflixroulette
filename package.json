@@ -11,9 +11,9 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:spec": "jest --testPathPattern=spec.js --runInBand",
-    "next:dev": "next",
+    "next:dev": "node server.js",
     "next:build": "next build",
-    "next:start": "next start"
+    "next:start": "NODE_ENV=production node server.js"
   },
   "author": "Vladimir Artemev",
   "license": "ISC",
@@ -69,7 +69,7 @@
     "graphql-tag": "^2.10.1",
     "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.15",
-    "next": "8.1.0",
+    "next": "^9.0.5",
     "next-compose-plugins": "^2.2.0",
     "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",

@@ -3,10 +3,10 @@
 const express = require('express');
 const next = require('next');
 
-const port = parseInt(process.env.PORT, 10) || 3000;
+const PORT = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
-const handle = app.getRequestHandler();
+const handleNextRequest = app.getRequestHandler();
 
 app.prepare().then(() => {
   const server = express();
@@ -22,18 +22,23 @@ app.prepare().then(() => {
     });
   });
 
-  server.get('/movie', (req, res) => {
-    console.log('movie', req.query.id);
+  server.get('/search', (req, res) => {
+    app.render(req, res, '/search', {
+      searchValue: req.params.searchValue,
+    });
+  });
 
-    return app.render(req, res, '/movie', { id: req.query.id });
+  server.get('/movie/:id', (req, res) => {
+    console.log('movie', req.query.id);
+    app.render(req, res, '/movie', { id: req.query.id });
   });
 
   server.get('*', (req, res) => {
-    return handle(req, res);
+    return handleNextRequest(req, res);
   });
 
-  server.listen(port, err => {
+  server.listen(PORT, err => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
+    console.log(`> It's working on http://localhost:${PORT}`);
   });
 });

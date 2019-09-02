@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import { setSortFilter } from '../../actions';
 import { ButtonType } from '../../components';
@@ -11,15 +11,18 @@ const sortBy = [
   { key: 'rating', title: 'rating' },
 ];
 
-export const ResultInfo = withRouter(() => {
+export const ResultInfo = () => {
   const { foundedMovies, genre } = useSelector(state => ({
     foundedMovies: state.movie.get('movies'),
     genre: state.movie.get('searchQuery'),
   }));
 
+  const router = useRouter();
+  const { id } = router.query;
+
   return (
     <nav className="additional">
-      {true ? (
+      {id ? (
         <span className="founded">Movies by {genre} genre</span>
       ) : (
         <>
@@ -36,4 +39,4 @@ export const ResultInfo = withRouter(() => {
       )}
     </nav>
   );
-});
+};

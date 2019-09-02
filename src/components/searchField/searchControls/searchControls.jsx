@@ -18,6 +18,7 @@ export const SearchControls = ({
   sortFilter,
   handleOnSearchClick,
 }) => {
+  const ref = React.createRef();
   return (
     <div className="filters">
       <div className="filters__title">Search by</div>
@@ -28,18 +29,16 @@ export const SearchControls = ({
           filter={setSearchFilter}
         />
       </div>
-      <Link
+
+      <Button
+        text="Search"
+        ref={ref}
         href={`/searchResult?searchValue=${searchValue}`}
-        as="/searchResult/searchValue"
-      >
-        <Button
-          text="Search"
-          type={ButtonType.search}
-          handleOnClick={() =>
-            handleOnSearchClick(searchValue, searchFilter, sortFilter)
-          }
-        />
-      </Link>
+        type={ButtonType.search}
+        handleOnClick={() =>
+          handleOnSearchClick(searchValue, searchFilter, sortFilter)
+        }
+      />
     </div>
   );
 };
