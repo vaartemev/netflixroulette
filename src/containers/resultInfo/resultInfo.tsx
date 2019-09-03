@@ -6,12 +6,17 @@ import { ButtonType } from '../../components';
 import { RadioButton } from '../radioButton';
 import './resultInfo.scss';
 
-const sortBy = [
+export type SortByTypes = {
+  key: string;
+  title: string;
+};
+
+const sortBy: SortByTypes[] = [
   { key: 'release_date', title: 'release date' },
   { key: 'rating', title: 'rating' },
 ];
 
-export const ResultInfo = () => {
+export const ResultInfo = (): JSX.Element => {
   const { foundedMovies, genre } = useSelector(state => ({
     foundedMovies: state.movie.get('movies'),
     genre: state.movie.get('searchQuery'),

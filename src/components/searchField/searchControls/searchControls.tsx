@@ -5,7 +5,12 @@ import { RadioButton } from '../../../containers';
 
 import './searchControls.scss';
 
-const filters = [
+interface FiltersTypes {
+  title: string;
+  key: string;
+}
+
+const filters: FiltersTypes[] = [
   { key: 'title', title: 'Title' },
   { key: 'genres', title: 'Genre' },
 ];
@@ -38,7 +43,7 @@ export const SearchControls: React.FC<SearchControlsProps> = ({
         text="Search"
         href={`/searchResult?searchValue=${searchValue}`}
         type={ButtonType.search}
-        handleOnClick={() =>
+        handleOnClick={(): void =>
           handleOnSearchClick(searchValue, searchFilter, sortFilter)
         }
       />

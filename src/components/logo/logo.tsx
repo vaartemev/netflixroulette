@@ -5,8 +5,6 @@ interface LogoProps {
   text: string;
 }
 
-export const Logo: React.FC<LogoProps> = ({
-  text,
-}) => {
+export const Logo: React.FC<LogoProps> = ({ text }) => {
   return <div className="logo">{text}</div>;
 };

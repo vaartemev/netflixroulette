@@ -1,17 +1,34 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Button, ButtonType } from '../../components';
 
-export const RadioButton = ({ type, filters, filter }) => {
-  const { searchBy, sortBy } = useSelector(state => ({
+type FiltersTypes = {
+  key: string;
+  title: string;
+};
+
+interface RadioButtonProps {
+  type: string;
+  filters: FiltersTypes[];
+  filter: () => void;
+}
+
+export const RadioButton = ({
+  type,
+  filters,
+  filter,
+}: RadioButtonProps): JSX.Element => {
+  const {
+    searchBy,
+    sortBy,
+  }: { searchBy: string; sortBy: string } = useSelector(state => ({
     searchBy: state.movie.get('searchBy'),
     sortBy: state.movie.get('sortBy'),
   }));
 
   const dispatch = useDispatch();
 
-  const checkActiveButton = (typeOfButton, key) => {
+  const checkActiveButton = (typeOfButton: string, key: string): boolean => {
     if (typeOfButton === ButtonType.filter) {
       return searchBy === key;
     }
@@ -30,10 +47,4 @@ export const RadioButton = ({ type, filters, filter }) => {
       />
     );
   });
-};
-
-RadioButton.propTypes = {
-  type: PropTypes.string,
-  filters: PropTypes.array,
-  filter: PropTypes.func,
 };

@@ -7,9 +7,6 @@ interface MovieTitleProps {
   title: string;
 }
 
-export const MovieTitle: React.FunctionComponent<MovieTitleProps> = ({
-  className,
-  title,
-}: MovieTitleProps): JSX.Element => {
+export const MovieTitle: React.FC<MovieTitleProps> = ({ className, title }) => {
   return <h2 className={className}>{title}</h2>;
 };

@@ -3,20 +3,27 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import './button.scss';
 
-export const ButtonType = {
+type TypesOfButtonType = {
+  search: string;
+  searchLink: string;
+  filter: string;
+  sort: string;
+};
+
+interface ButtonProps {
+  text: string;
+  type?: string;
+  href?: string;
+  checked?: boolean;
+  handleOnClick?: () => void;
+}
+
+export const ButtonType: TypesOfButtonType = {
   search: 'search',
   searchLink: 'search-link',
   filter: 'filter',
   sort: 'sort',
 };
-
-interface ButtonProps {
-  text: string;
-  type: string;
-  href: string;
-  checked: boolean;
-  handleOnClick();
-}
 
 export const Button: React.FC<ButtonProps> = ({
   text,
@@ -25,7 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
   type = ButtonType.sort,
   href,
 }) => {
-  const resultClass = classNames('button', {
+  const resultClass: string = classNames('button', {
     'button__filter-active': checked && type === ButtonType.filter,
     'button__sort-active': checked && type === ButtonType.sort,
     button__sort: type === ButtonType.sort,
