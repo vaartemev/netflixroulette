@@ -14,17 +14,19 @@ interface MoviesTypes {
   release_date: string;
   genres: string[];
 }
-
-export const ResultBody = (): JSX.Element => {
-  const {
-    movies,
-    isFetching,
-  }: { movies: Record<string, any>; isFetching: boolean } = useSelector(
-    state => ({
-      movies: state.movie.get('movies'),
-      isFetching: state.movie.get('isFetching'),
-    }),
-  );
+interface Store {
+  searchBy: string;
+  sortBy: string;
+  movie: any;
+}
+export const ResultBody = () => {
+  const { movies, isFetching } = useSelector<
+    Store,
+    { movies: Record<string, any>; isFetching: boolean }
+  >(state => ({
+    movies: state.movie.get('movies'),
+    isFetching: state.movie.get('isFetching'),
+  }));
 
   const dispatch = useDispatch();
   const yetLoader = (

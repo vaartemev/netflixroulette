@@ -20,7 +20,7 @@ export const initialState = Map({
   isFetching: false,
 });
 
-export const movieReducer = (state = initialState, action) => {
+export const movieReducer = (state = initialState, action: any) => {
   const { type, payload } = action;
   switch (type) {
     case GET_MOVIES_BY_SEARCH_QUERY:

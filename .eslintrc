@@ -1,7 +1,7 @@
 {
   "extends": ["airbnb", "prettier", "plugin:@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
     "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [
@@ -27,6 +27,7 @@
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": 0,
     "no-plusplus": 0,
-    "no-undef": 0
+    "no-undef": 0,
+     "@typescript-eslint/explicit-function-return-type": 0
   }
 }

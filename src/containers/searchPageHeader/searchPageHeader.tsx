@@ -32,16 +32,21 @@ const mapStateToProps = (state: any): StateTypes => ({
   sortFilter: state.movie.get('sortBy'),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch): DispatchTypes => ({
-  handleOnEnterPress: (value, key, searchFilter, sortFilter) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  handleOnEnterPress: (
+    value: string,
+    key: string,
+    searchFilter: string,
+    sortFilter: string,
+  ) => {
     if (key === 'Enter') {
       dispatch(getMoviesBySearchQuery(value, searchFilter, sortFilter));
     }
   },
-  handleOnInput: value => {
+  handleOnInput: (value: string) => {
     dispatch(setSearchValue(value));
   },
-  handleOnSearchClick: (searchQuery, filter, sort) => {
+  handleOnSearchClick: (searchQuery: string, filter: string, sort: string) => {
     dispatch(getMoviesBySearchQuery(searchQuery, filter, sort));
   },
 });

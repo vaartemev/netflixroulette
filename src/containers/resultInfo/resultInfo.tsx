@@ -10,14 +10,21 @@ interface SortByTypes {
   key: string;
   title: string;
 }
-
+interface Store {
+  searchBy: string;
+  sortBy: string;
+  movie: any;
+}
 const sortBy: SortByTypes[] = [
   { key: 'release_date', title: 'release date' },
   { key: 'rating', title: 'rating' },
 ];
 
-export const ResultInfo = (): JSX.Element => {
-  const { foundedMovies, genre } = useSelector(state => ({
+export const ResultInfo = () => {
+  const { foundedMovies, genre } = useSelector<
+    Store,
+    { foundedMovies: string; genre: string }
+  >(state => ({
     foundedMovies: state.movie.get('movies'),
     genre: state.movie.get('searchQuery'),
   }));

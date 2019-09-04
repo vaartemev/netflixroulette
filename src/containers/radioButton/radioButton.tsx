@@ -7,29 +7,23 @@ interface FiltersTypes {
   title: string;
 }
 
-interface ButtonTypes {
-  text: string;
-  type?: string;
-  href: string;
-  checked?: boolean;
-  handleOnClick?: () => void;
-}
-
-interface RadioButtonProps {
+interface Props {
   type: string;
   filters: FiltersTypes[];
   filter: (arg: string) => void;
 }
 
-export const RadioButton = ({
-  type,
-  filters,
-  filter,
-}: RadioButtonProps): JSX.Element => {
-  const {
-    searchBy,
-    sortBy,
-  }: { searchBy: string; sortBy: string } = useSelector((state: any) => ({
+interface Store {
+  searchBy: string;
+  sortBy: string;
+  movie: any;
+}
+
+export const RadioButton = ({ type, filters, filter }: Props) => {
+  const { searchBy, sortBy } = useSelector<
+    Store,
+    { searchBy: string; sortBy: string }
+  >(state => ({
     searchBy: state.movie.get('searchBy'),
     sortBy: state.movie.get('sortBy'),
   }));
@@ -43,16 +37,20 @@ export const RadioButton = ({
     return sortBy === key;
   };
 
-  return filters.map(item => {
-    return (
-      <Button
-        key={item.key}
-        type={type}
-        href=""
-        text={item.title}
-        checked={checkActiveButton(type, item.key)}
-        handleOnClick={(): void => dispatch(filter(item.key))}
-      />
-    );
-  });
+  return (
+    <>
+      {filters.map(item => {
+        return (
+          <Button
+            key={item.key}
+            type={type}
+            href=""
+            text={item.title}
+            checked={checkActiveButton(type, item.key)}
+            handleOnClick={(): void => dispatch(filter(item.key))}
+          />
+        );
+      })}
+    </>
+  );
 };
