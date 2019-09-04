@@ -3,17 +3,17 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import './button.scss';
 
-type TypesOfButtonType = {
+interface TypesOfButtonType {
   search: string;
   searchLink: string;
   filter: string;
   sort: string;
-};
+}
 
 interface ButtonProps {
   text: string;
   type?: string;
-  href?: string;
+  href: string;
   checked?: boolean;
   handleOnClick?: () => void;
 }

@@ -6,10 +6,10 @@ import { ButtonType } from '../../components';
 import { RadioButton } from '../radioButton';
 import './resultInfo.scss';
 
-export type SortByTypes = {
+interface SortByTypes {
   key: string;
   title: string;
-};
+}
 
 const sortBy: SortByTypes[] = [
   { key: 'release_date', title: 'release date' },
@@ -35,7 +35,7 @@ export const ResultInfo = (): JSX.Element => {
           <div className="sort">
             <span className="sort__title">Sort by</span>
             <RadioButton
-              type={ButtonType.Sort}
+              type={ButtonType.sort}
               filters={sortBy}
               filter={setSortFilter}
             />

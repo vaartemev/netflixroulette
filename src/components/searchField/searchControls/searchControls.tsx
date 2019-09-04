@@ -19,7 +19,11 @@ interface SearchControlsProps {
   searchValue: string;
   searchFilter: string;
   sortFilter: string;
-  handleOnSearchClick();
+  handleOnSearchClick: (
+    searchValue: string,
+    searchFilter: string,
+    sortFilter: string,
+  ) => void;
 }
 
 export const SearchControls: React.FC<SearchControlsProps> = ({
@@ -27,7 +31,7 @@ export const SearchControls: React.FC<SearchControlsProps> = ({
   searchFilter,
   sortFilter,
   handleOnSearchClick,
-}) => {
+}): JSX.Element => {
   return (
     <div className="filters">
       <div className="filters__title">Search by</div>

@@ -10,8 +10,8 @@ interface MovieItemProps {
   src: string;
   title: string;
   year: string;
-  genre: Array<string>;
-  handleOnClick();
+  genre: string[];
+  handleOnClick: () => void;
 }
 
 export const MovieItem: React.FC<MovieItemProps> = ({

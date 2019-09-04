@@ -5,9 +5,9 @@ import { Input } from '../input';
 import './searchField.scss';
 
 interface SearchFieldProps {
-  handleOnEnterPress();
-  handleOnInput();
-  handleOnSearchClick();
+  handleOnEnterPress: () => void;
+  handleOnInput: () => void;
+  handleOnSearchClick: () => void;
   searchValue: string;
   searchFilter: string;
   sortFilter: string;

@@ -1,7 +1,8 @@
 import 'regenerator-runtime/runtime';
-import { stringify } from 'query-string';
 import gql from 'graphql-tag';
 import { client } from '../client';
+
+const stringify = require('query-string');
 
 const fetchMoviesQuery = gql`
   query($searchQuery: String!) {
@@ -12,7 +13,7 @@ const fetchMoviesQuery = gql`
   }
 `;
 
-export const fetchMovies = async params => {
+export const fetchMovies = async (params: object) => {
   const searchQuery = `${stringify(params)}`;
   console.log(searchQuery);
   const movies = await client.query({

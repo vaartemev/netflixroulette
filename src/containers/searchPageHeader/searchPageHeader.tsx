@@ -1,16 +1,38 @@
 import React from 'react';
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { Logo, SearchField } from '../../components';
 import { getMoviesBySearchQuery, setSearchValue } from '../../actions';
 import './searchPageHeader.scss';
 
-const mapStateToProps = state => ({
+interface StateTypes {
+  searchValue: string;
+  searchFilter: string;
+  sortFilter: string;
+}
+
+interface DispatchTypes {
+  handleOnEnterPress: (
+    value: string,
+    key: string,
+    searchFilter: string,
+    sortFilter: string,
+  ) => void;
+  handleOnInput: (value: string) => void;
+  handleOnSearchClick: (
+    searchQuery: string,
+    filter: string,
+    sort: string,
+  ) => void;
+}
+
+const mapStateToProps = (state: any): StateTypes => ({
   searchValue: state.movie.get('searchQuery'),
   searchFilter: state.movie.get('searchBy'),
   sortFilter: state.movie.get('sortBy'),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch): DispatchTypes => ({
   handleOnEnterPress: (value, key, searchFilter, sortFilter) => {
     if (key === 'Enter') {
       dispatch(getMoviesBySearchQuery(value, searchFilter, sortFilter));

@@ -2,15 +2,23 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, ButtonType } from '../../components';
 
-type FiltersTypes = {
+interface FiltersTypes {
   key: string;
   title: string;
-};
+}
+
+interface ButtonTypes {
+  text: string;
+  type?: string;
+  href: string;
+  checked?: boolean;
+  handleOnClick?: () => void;
+}
 
 interface RadioButtonProps {
   type: string;
   filters: FiltersTypes[];
-  filter: () => void;
+  filter: (arg: string) => void;
 }
 
 export const RadioButton = ({
@@ -21,7 +29,7 @@ export const RadioButton = ({
   const {
     searchBy,
     sortBy,
-  }: { searchBy: string; sortBy: string } = useSelector(state => ({
+  }: { searchBy: string; sortBy: string } = useSelector((state: any) => ({
     searchBy: state.movie.get('searchBy'),
     sortBy: state.movie.get('sortBy'),
   }));
@@ -43,7 +51,7 @@ export const RadioButton = ({
         href=""
         text={item.title}
         checked={checkActiveButton(type, item.key)}
-        handleOnClick={() => dispatch(filter(item.key))}
+        handleOnClick={(): void => dispatch(filter(item.key))}
       />
     );
   });

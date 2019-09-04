@@ -4,8 +4,8 @@ import './input.scss';
 interface InputProps {
   searchValue: string;
   placeholderText: string;
-  handleOnEnterPress: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleOnInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleOnInput: (value: string) => void;
+  handleOnEnterPress: (searchValue: string, key: string) => void;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -20,8 +20,10 @@ export const Input: React.FC<InputProps> = ({
         type="text"
         placeholder={placeholderText}
         className="search__field"
-        onChange={({ target: { value } }) => handleOnInput(value)}
-        onKeyDown={({ key }) => handleOnEnterPress(searchValue, key)}
+        onInput={({
+          currentTarget: { value },
+        }: React.FormEvent<HTMLInputElement>): void => handleOnInput(value)}
+        onKeyDown={({ key }): void => handleOnEnterPress(searchValue, key)}
       />
     </label>
   );
