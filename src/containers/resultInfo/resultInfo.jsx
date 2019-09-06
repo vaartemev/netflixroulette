@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { setSortFilter } from '../../actions';
 import { ButtonType } from '../../components';
 import { RadioButton } from '../radioButton';
+import {resultSelector} from '../../selectors';
 import './resultInfo.scss';
 
 const sortBy = [
@@ -12,10 +13,7 @@ const sortBy = [
 ];
 
 export const ResultInfo = () => {
-  const { foundedMovies, genre } = useSelector(state => ({
-    foundedMovies: state.movie.get('movies'),
-    genre: state.movie.get('searchQuery'),
-  }));
+  const { movies, genre } = useSelector(resultSelector);
 
   const router = useRouter();
   const { id } = router.query;
@@ -26,7 +24,7 @@ export const ResultInfo = () => {
         <span className="founded">Movies by {genre} genre</span>
       ) : (
         <>
-          <span className="founded">{foundedMovies.length} movies founded</span>
+          <span className="founded">{movies.length} movies founded</span>
           <div className="sort">
             <span className="sort__title">Sort by</span>
             <RadioButton

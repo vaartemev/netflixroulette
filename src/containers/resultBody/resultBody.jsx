@@ -5,15 +5,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Preloader, MovieItem, NoFilmsFound } from '../../components';
 
 import { getMovieDetailsById, getMoviesBySearchQuery } from '../../actions';
+import {resultSelector} from '../../selectors';
 import './resultBody.scss';
 
 export const ResultBody = () => {
-  const { movies, isFetching } = useSelector(state => ({
-    movies: state.movie.get('movies'),
-    isFetching: state.movie.get('isFetching'),
-  }));
-
+  const {movies, isFetching} = useSelector(resultSelector);
+  
   const dispatch = useDispatch();
+
   const yetLoader = (condition, then, otherwise) =>
     condition ? then : otherwise;
 

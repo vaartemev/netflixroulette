@@ -1,34 +1,23 @@
 import React, { useEffect, createRef } from 'react';
-import { connect } from 'react-redux';
-import Link from 'next/link';
 import { useRouter, withRouter } from 'next/router';
 
 import { MovieDetails } from './movieDetails';
 import { Logo, Button, ButtonType } from '../../../components';
 
 import { getMovieDetailsById } from '../../../actions';
+
+import {useSelector, useDispatch} from 'react-redux';
+import {movieSelector} from '../../../selectors'
 import './moviePageHeader.scss';
 
-const mapStateToProps = state => ({
-  movie: state.movie.get('movie'),
-});
-
-const mapDispatchToProps = dispatch => ({
-  getMovieDetails: id => {
-    dispatch(getMovieDetailsById(id));
-  },
-});
-
-export const MoviePageHeader = withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps,
-  )(({ movie, getMovieDetails }) => {
+export const MoviePageHeader = withRouter( () => {
+    const movie = useSelector(movieSelector);
+    const dispatch = useDispatch();
     const ref = createRef();
     const router = useRouter();
     const { id } = router.query;
     useEffect(() => {
-      getMovieDetails(id);
+      dispatch(getMovieDetailsById(id));
     });
 
     return (
@@ -49,5 +38,5 @@ export const MoviePageHeader = withRouter(
         )}
       </div>
     );
-  }),
+  }
 );

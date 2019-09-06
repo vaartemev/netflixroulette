@@ -1,15 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { MovieTitle } from '../movieTitle';
 import { Thumbnail } from '../thumbnail';
 
 import './movieItem.scss';
 
-export const MovieItem = ({ id, src, title, year, genre, handleOnClick }) => {
+interface Props {
+  id: number;
+  src: string;
+  title: string;
+  year: string;
+  genre: string[];
+  handleOnClick: () => void;
+}
+
+export const MovieItem = ({
+  id,
+  src,
+  title,
+  year,
+  genre,
+  handleOnClick,
+}: Props) => {
   return (
     <Link href={`/movie?id=${id}`}>
-      <div className="movie" onClick={handleOnClick} role="link" tabIndex="0">
+      <div className="movie" onClick={handleOnClick} role="link" tabIndex={0}>
         <Thumbnail src={src} className="movie__thumbnail" />
         <div className="movie__info">
           <MovieTitle className="movie__title" title={title} />
@@ -19,11 +34,4 @@ export const MovieItem = ({ id, src, title, year, genre, handleOnClick }) => {
       </div>
     </Link>
   );
-};
-
-MovieItem.propTypes = {
-  src: PropTypes.string,
-  title: PropTypes.string,
-  year: PropTypes.string,
-  genre: PropTypes.array,
 };

@@ -1,28 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './input.scss';
+
+interface Props {
+  searchValue: string;
+  placeholderText: string;
+  handleOnEnterPress: (searchValue: string, key: string) => void;
+  handleOnInput: (value: string) => void;
+}
 
 export const Input = ({
   searchValue,
   placeholderText,
   handleOnEnterPress,
   handleOnInput,
-}) => {
+}: Props) => {
   return (
     <label className="search-field__wrapper" htmlFor="input">
       <input
         type="text"
         placeholder={placeholderText}
         className="search__field"
-        onInput={({ target: { value } }) => handleOnInput(value)}
+        onInput={({ currentTarget: { value } }) => handleOnInput(value)}
         onKeyDown={({ key }) => handleOnEnterPress(searchValue, key)}
       />
     </label>
   );
-};
-
-Input.propTypes = {
-  searchValue: PropTypes.string,
-  placeholderText: PropTypes.string,
-  handleOnEnterPress: PropTypes.func,
 };
