@@ -14,6 +14,7 @@ import './resultBody.scss';
 interface Props {
   movies: any;
   isFetching: boolean;
+  genre: string
 }
 interface MoviesTypes {
   id: number;
@@ -35,8 +36,8 @@ export const ResultBody = () => {
   const { searchValue } = router.query;
 
   useEffect(() => {
-    if (searchValue !== 'undefined') {
-      dispatch(getMoviesBySearchQuery(searchValue));
+    if (typeof searchValue !== 'undefined') {
+      dispatch(getMoviesBySearchQuery(searchValue))
     }
   }, []);
 

@@ -17,11 +17,11 @@ const filters: FiltersTypes[] = [
 ];
 
 interface Props {
-  searchValue: string;
+  searchValue: string | string[];
   searchFilter: string;
   sortFilter: string;
   handleOnSearchClick: (
-    searchValue: string,
+    searchValue: string | string[],
     searchFilter: string,
     sortFilter: string,
   ) => void;

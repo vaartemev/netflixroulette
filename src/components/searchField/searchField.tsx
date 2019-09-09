@@ -8,7 +8,7 @@ interface Props {
   handleOnEnterPress: () => void;
   handleOnInput: () => void;
   handleOnSearchClick: () => void;
-  searchValue: string;
+  searchValue: string | string[];
   searchFilter: string;
   sortFilter: string;
 }

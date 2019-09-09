@@ -11,6 +11,15 @@ import {
   GET_MOVIES_BY_SEARCH_QUERY_FAILURE,
 } from '../actions';
 
+interface State {
+  movies: any;
+  movie: any;
+  searchQuery: string;
+  searchBy: string;
+  sortBy: string;
+  isFetching: boolean;
+}
+
 export const initialState = Map({
   movies: [],
   movie: {},
@@ -20,7 +29,7 @@ export const initialState = Map({
   isFetching: false,
 });
 
-export const movieReducer = (state = initialState, action) => {
+export const movieReducer = (state = initialState, action: any) => {
   const { type, payload } = action;
   switch (type) {
     case GET_MOVIES_BY_SEARCH_QUERY:

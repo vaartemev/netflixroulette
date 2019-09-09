@@ -1,5 +1,3 @@
-export {
-  resultSelector,
-  searchSelector,
-  movieSelector,
-} from './movies-selector';
+export { resultSelector } from './resultSelector';
+export { movieSelector } from './movieSelector';
+export { searchSelector } from './searchSelector';

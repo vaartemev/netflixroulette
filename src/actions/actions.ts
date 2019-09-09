@@ -8,14 +8,19 @@ import {
   SET_SEARCH_FILTER,
   SET_SORT_FILTER,
   SET_SEARCH_VALUE,
+  GetMoviesBySearchTypes,
+  GetMovieDetailsTypes,
+  SetSearchFilterAction,
+  SetSortFilterAction,
+  SetSearchValueAction,
 } from './actionTypes';
 
 export const getMoviesBySearchQuery = (
-  search,
+  search: string | string[],
   searchBy = 'title',
   sortBy = 'release_date',
   sortOrder = 'desc',
-) => {
+): GetMoviesBySearchTypes => {
   return {
     type: GET_MOVIES_BY_SEARCH_QUERY,
     payload: {
@@ -27,7 +32,9 @@ export const getMoviesBySearchQuery = (
   };
 };
 
-export const getMoviesBySearchQuerySuccess = movies => {
+export const getMoviesBySearchQuerySuccess = (
+  movies: [],
+): GetMoviesBySearchTypes => {
   return {
     type: GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
     payload: {
@@ -42,7 +49,7 @@ export const getMoviesBySearchQueryFailure = () => {
   };
 };
 
-export const getMovieDetailsById = id => {
+export const getMovieDetailsById = (id: number): GetMovieDetailsTypes => {
   return {
     type: GET_MOVIE_DETAILS_BY_ID,
     payload: {
@@ -51,7 +58,7 @@ export const getMovieDetailsById = id => {
   };
 };
 
-export const getMovieDetailsByIdSuccess = movie => {
+export const getMovieDetailsByIdSuccess = (movie: {}): GetMovieDetailsTypes => {
   return {
     type: GET_MOVIE_DETAILS_BY_ID_SUCCESS,
     payload: {
@@ -60,13 +67,13 @@ export const getMovieDetailsByIdSuccess = movie => {
   };
 };
 
-export const getMovieDetailsByIdFailure = () => {
+export const getMovieDetailsByIdFailure = (): GetMovieDetailsTypes => {
   return {
     type: GET_MOVIE_DETAILS_BY_ID_FAILURE,
   };
 };
 
-export const setSearchFilter = searchBy => {
+export const setSearchFilter = (searchBy: string): SetSearchFilterAction => {
   return {
     type: SET_SEARCH_FILTER,
     payload: {
@@ -75,7 +82,7 @@ export const setSearchFilter = searchBy => {
   };
 };
 
-export const setSortFilter = sortBy => {
+export const setSortFilter = (sortBy: string): SetSortFilterAction => {
   return {
     type: SET_SORT_FILTER,
     payload: {
@@ -84,7 +91,7 @@ export const setSortFilter = sortBy => {
   };
 };
 
-export const setSearchValue = searchValue => {
+export const setSearchValue = (searchValue: string): SetSearchValueAction => {
   return {
     type: SET_SEARCH_VALUE,
     payload: {

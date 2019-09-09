@@ -2,9 +2,9 @@ import React from 'react';
 import './input.scss';
 
 interface Props {
-  searchValue: string;
+  searchValue: string | string[];
   placeholderText: string;
-  handleOnEnterPress: (searchValue: string, key: string) => void;
+  handleOnEnterPress: (searchValue: string | string[], key: string) => void;
   handleOnInput: (value: string) => void;
 }
 

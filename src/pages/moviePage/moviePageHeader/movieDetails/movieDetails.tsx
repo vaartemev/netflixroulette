@@ -1,9 +1,21 @@
-/* eslint-disable camelcase */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { MovieTitle, Thumbnail } from '../../../../components';
 
 import './movieDetails.scss';
+
+interface MovieTypes {
+  poster_path: string;
+  title: string;
+  tagline: string;
+  vote_average: number;
+  overview: string;
+  release_date: string;
+  runtime: number;
+}
+
+interface Props {
+  movie: MovieTypes;
+}
 
 export const MovieDetails = ({
   movie: {
@@ -15,7 +27,7 @@ export const MovieDetails = ({
     release_date,
     runtime,
   },
-}) => {
+}: Props) => {
   return (
     <div className="about">
       <div className="about__picture">
@@ -37,16 +49,4 @@ export const MovieDetails = ({
       </div>
     </div>
   );
-};
-
-MovieDetails.propTypes = {
-  movie: PropTypes.shape({
-    poster_path: PropTypes.string,
-    title: PropTypes.string,
-    vote_average: PropTypes.number,
-    tagline: PropTypes.string,
-    release_date: PropTypes.string,
-    runtime: PropTypes.number,
-    overview: PropTypes.string,
-  }),
 };

@@ -24,16 +24,16 @@ export const ResultInfo = () => {
 
   return (
     <nav className="additional">
-          {id ? (
+      {id ? (
         <span className="founded">Movies by {genre} genre</span>
       ) : (
-              <>
+        <>
           <span className="founded">{movies.length} movies founded</span>
           <div className="sort">
             <span className="sort__title">Sort by</span>
             <RadioButton
-                type={ButtonType.sort}
-                filters={sortBy}
+              type={ButtonType.sort}
+              filters={sortBy}
               filter={setSortFilter}
             />
           </div>
