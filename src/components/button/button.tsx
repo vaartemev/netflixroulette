@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import classNames from 'classnames';
 import './button.scss';
 
@@ -15,30 +14,31 @@ interface Props {
   checked?: boolean;
   handleOnClick?: () => void;
   type?: string;
-  href: URL;
 }
 
-export const Button = ({
-  text,
-  checked,
-  handleOnClick,
-  type = ButtonType.sort,
-  href,
-}: Props) => {
-  const resultClass = classNames('button', {
-    'button__filter-active': checked && type === ButtonType.filter,
-    'button__sort-active': checked && type === ButtonType.sort,
-    button__sort: type === ButtonType.sort,
-    button__search: type === ButtonType.search,
-    'button__search button__search-link': type === ButtonType.searchLink,
-    button__filter: type === ButtonType.filter,
-  });
+export const Button = React.forwardRef(
+  (
+    { text, checked, handleOnClick, type = ButtonType.sort }: Props,
+    myRef: any,
+  ) => {
+    const resultClass = classNames('button', {
+      'button__filter-active': checked && type === ButtonType.filter,
+      'button__sort-active': checked && type === ButtonType.sort,
+      button__sort: type === ButtonType.sort,
+      button__search: type === ButtonType.search,
+      'button__search button__search-link': type === ButtonType.searchLink,
+      button__filter: type === ButtonType.filter,
+    });
 
-  return (
-    <Link href={href}>
-      <button className={resultClass} type="button" onClick={handleOnClick}>
+    return (
+      <button
+        className={resultClass}
+        type="button"
+        ref={myRef}
+        onClick={handleOnClick}
+      >
         {text}
       </button>
-    </Link>
-  );
-};
+    );
+  },
+);

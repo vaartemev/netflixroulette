@@ -3,18 +3,29 @@ import classNames from 'classnames';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import { Preloader, MovieItem, NoFilmsFound } from '../../components';
+import { YetLoader } from '../../components/yetLoader/yetLoader';
 
 import { getMovieDetailsById, getMoviesBySearchQuery } from '../../actions';
-import {resultSelector} from '../../selectors';
+import { resultSelector } from '../../selectors';
 import './resultBody.scss';
 
-export const ResultBody = () => {
-  const {movies, isFetching} = useSelector(resultSelector);
-  
-  const dispatch = useDispatch();
+// TODO: movies props change
 
-  const yetLoader = (condition, then, otherwise) =>
-    condition ? then : otherwise;
+interface Props {
+  movies: any;
+  isFetching: boolean;
+}
+interface MoviesTypes {
+  id: number;
+  title: string;
+  poster_path: string;
+  release_date: string;
+  genres: string[];
+}
+export const ResultBody = () => {
+  const { movies, isFetching } = useSelector<string, Props>(resultSelector);
+
+  const dispatch = useDispatch();
 
   const resultClass = classNames('content', {
     'content-not-found': movies.length === 0,
@@ -31,13 +42,9 @@ export const ResultBody = () => {
 
   return (
     <div className={resultClass}>
-      {movies.length === 0
-        ? yetLoader(
-            isFetching,
-            <Preloader />,
-            <NoFilmsFound className="content-not-found__text" />,
-          )
-        : movies.map(({ id, title, poster_path, release_date, genres }) => (
+      {movies.length !== 0 ? (
+        movies.map(
+          ({ id, title, poster_path, release_date, genres }: MoviesTypes) => (
             <MovieItem
               key={id}
               id={id}
@@ -47,7 +54,15 @@ export const ResultBody = () => {
               year={release_date}
               genre={genres}
             />
-          ))}
+          ),
+        )
+      ) : (
+        <YetLoader
+          condition={!isFetching}
+          content={<NoFilmsFound className="content-not-found__text" />}
+          otherwise={<Preloader />}
+        />
+      )}
     </div>
   );
 };
