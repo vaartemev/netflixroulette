@@ -16,11 +16,10 @@ interface Props {
   type?: string;
 }
 
-export const Button = React.forwardRef(
-  (
-    { text, checked, handleOnClick, type = ButtonType.sort }: Props,
-    myRef: any,
-  ) => {
+export type Ref = HTMLButtonElement;
+
+export const Button = React.forwardRef<Ref, Props>(
+  ({ text, checked, handleOnClick, type = ButtonType.sort }: Props, ref) => {
     const resultClass = classNames('button', {
       'button__filter-active': checked && type === ButtonType.filter,
       'button__sort-active': checked && type === ButtonType.sort,
@@ -34,8 +33,8 @@ export const Button = React.forwardRef(
       <button
         className={resultClass}
         type="button"
-        ref={myRef}
-        onClick={handleOnClick}
+        ref={ref}
+        onClick={() => handleOnClick}
       >
         {text}
       </button>

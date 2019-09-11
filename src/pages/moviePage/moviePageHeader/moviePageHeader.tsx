@@ -6,19 +6,20 @@ import { MovieDetails } from './movieDetails';
 import { Logo, Button, ButtonType } from '../../../components';
 
 import { getMovieDetailsById } from '../../../actions';
-
+import {Ref} from '../../../components/button/button'
 import { movieSelector } from '../../../selectors';
 import './moviePageHeader.scss';
 
 export const MoviePageHeader = withRouter(() => {
   const movie = useSelector(movieSelector);
   const dispatch = useDispatch();
-  const ref = createRef();
+  const ref = createRef<Ref>();
+  
   const router = useRouter();
   const { id } = router.query;
   useEffect(() => {
-    dispatch(getMovieDetailsById(id));
-  }, []);
+    dispatch(getMovieDetailsById(Number(id)));
+  }, [id]);
 
   return (
     <div className="header">

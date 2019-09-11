@@ -11,7 +11,9 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <Provider store={store}>
-        <Component {...pageProps} />
+        <div id="root">
+          <Component {...pageProps} />
+        </div>
       </Provider>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button, ButtonType } from '../../button';
+import { Ref } from '../../button/button';
 import { setSearchFilter } from '../../../actions';
 import { RadioButton } from '../../../containers';
 
@@ -33,7 +34,8 @@ export const SearchControls = ({
   sortFilter,
   handleOnSearchClick,
 }: Props) => {
-  const myRef = React.createRef();
+  const ref = React.createRef<Ref>();
+
   return (
     <div className="filters">
       <div className="filters__title">Search by</div>
@@ -44,15 +46,26 @@ export const SearchControls = ({
           filter={setSearchFilter}
         />
       </div>
-      <Link href={`/searchResult?searchValue=${searchValue}`}>
+
+      <Link href={`/searchResult?value=${searchValue}`}>
         <Button
           text="Search"
-          ref={myRef}
+          ref={ref}
           type={ButtonType.search}
           handleOnClick={() =>
             handleOnSearchClick(searchValue, searchFilter, sortFilter)
           }
         />
+      </Link>
+
+      <Link href={`/searchResult?value=${searchValue}`}>
+        <button
+          onClick={() =>
+            handleOnSearchClick(searchValue, searchFilter, sortFilter)
+          }
+        >
+          Search
+        </button>
       </Link>
     </div>
   );

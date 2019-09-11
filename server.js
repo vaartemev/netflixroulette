@@ -13,17 +13,17 @@ app.prepare().then(() => {
     res.redirect('/search');
   });
 
-  server.get('/searchResult/:search', (req, res) => {
+  server.get('/searchResult/:value', (req, res) => {
     return res.render(req, res, '/searchResult', {
-      searchValue: req.params.search,
+      searchValue: req.params.value,
     });
   });
 
-  server.get('/search', (req, res) => {
-    return app.render(req, res, '/searchResult', {
-      searchValue: req.params.search,
-    });
-  });
+  // server.get('/search', (req, res) => {
+  //   return app.render(req, res, '/searchResult', {
+  //     searchValue: req.params.value,
+  //   });
+  // });
 
   server.get('/movie/:id', (req, res) => {
     return app.render(req, res, '/movie', { id: req.query.id });

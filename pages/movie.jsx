@@ -5,10 +5,10 @@ import { Footer } from '../src/components';
 
 const Main = () => {
   return (
-    <div id="root">
+    <>
       <MoviePage />
       <Footer />
-    </div>
+    </>
   );
 };
 

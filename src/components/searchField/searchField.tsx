@@ -6,7 +6,7 @@ import './searchField.scss';
 
 interface Props {
   handleOnEnterPress: () => void;
-  handleOnInput: () => void;
+  handleOnInput(value: string): void;
   handleOnSearchClick: () => void;
   searchValue: string | string[];
   searchFilter: string;

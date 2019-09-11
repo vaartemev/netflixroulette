@@ -33,7 +33,7 @@ export const SearchPageHeader = () => {
       <Logo text="netflixroulette" />
       <SearchField
         handleOnEnterPress={() => handleOnEnterPress}
-        handleOnInput={() => handleOnInput}
+        handleOnInput={handleOnInput}
         handleOnSearchClick={() => handleOnSearchClick}
         searchValue={searchQuery}
         searchFilter={searchBy}
