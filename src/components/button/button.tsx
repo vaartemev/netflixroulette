@@ -33,7 +33,7 @@ export const Button = ({
   });
 
   return (
-    <button className={resultClass} type="button" onClick={() => handleOnClick}>
+    <button className={resultClass} type="button" onClick={handleOnClick}>
       {text}
     </button>
   );

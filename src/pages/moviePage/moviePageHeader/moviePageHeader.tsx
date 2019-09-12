@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useRouter, withRouter } from 'next/router';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { MovieDetails } from './movieDetails';
-import { Logo, Button, ButtonType } from '../../../components';
+import { Logo, Button, ButtonType, Link } from '../../../components';
 
 import { getMovieDetailsById } from '../../../actions';
 import { movieSelector } from '../../../selectors';
@@ -25,8 +24,9 @@ export const MoviePageHeader = withRouter(() => {
 
       {Object.keys(movie).length && (
         <>
-          <Button type={ButtonType.searchLink} text="Search" />
-
+          <Link href="/search">
+            <Button type={ButtonType.searchLink} text="Search" />
+          </Link>
           <MovieDetails movie={movie} />
         </>
       )}

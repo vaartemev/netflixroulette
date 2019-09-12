@@ -1,15 +1,21 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: './index.jsx',
+  entry: './index.tsx',
   module: {
     rules: [
       {
-        test: /\.jsx|js$/,
+        test: /\.(jsx|js)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ['awesome-typescript-loader'],
       },
       {
         test: /\.scss$/,
@@ -55,6 +61,9 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
+    new webpack.DefinePlugin({
+      CLIENT_SIDE_RENDERING: true,
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
     }),
@@ -62,6 +71,16 @@ module.exports = {
   watch: true,
   devtool: 'cheap-module-eval-source-map',
   resolve: {
-    extensions: ['.webpack.js', '.js', '.jsx', '.json', '.sass', 'scss', 'css'],
+    extensions: [
+      '.webpack.js',
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.json',
+      '.sass',
+      'scss',
+      'css',
+    ],
   },
 };

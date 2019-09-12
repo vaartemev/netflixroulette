@@ -3,10 +3,10 @@ import { useRouter } from 'next/router';
 
 interface Props {
   children: React.ReactChild;
-  href?: any;
+  href: string;
 }
 
-export const Link = ({ children, href }: Props) => {
+export const SSRLink = ({ children, href }: Props) => {
   const router = useRouter();
 
   const handleClick = (e: Event): void => {

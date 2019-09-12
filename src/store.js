@@ -6,8 +6,7 @@ import { rootSaga } from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
-
-
+console.log(process.browser);
 
 export const configureStore = () => {
   const store = createStore(

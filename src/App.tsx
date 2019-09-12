@@ -9,8 +9,8 @@ export const App = () => {
     <ErrorBoundary>
       <Switch>
         <Route path="/" exact component={SearchPageHeader} />
-        <Route path="/search/:searchValue" component={SearchPage} />
-        <Route path="/film/:id" component={MoviePage} />
+        <Route path="/searchResult/:searchValue" component={SearchPage} />
+        <Route path="/movie/:id" component={MoviePage} />
         <Route component={PageNotFound} />
       </Switch>
       <Footer />

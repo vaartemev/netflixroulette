@@ -19,6 +19,12 @@
     "noEmit": true,
     "jsx": "preserve"
   },
+  "awesomeTypescriptLoaderOptions": {
+"useWebpackText": true,
+"useTranspileModule": true,
+"doTypeCheck": true,
+"forkChecker": true
+},
   "exclude": [
     "node_modules"
   ],

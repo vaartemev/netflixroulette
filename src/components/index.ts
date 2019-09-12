@@ -2,6 +2,7 @@ export { Footer } from './footer';
 export { Button, ButtonType } from './button';
 export { Input } from './input';
 export { Logo } from './logo';
+export { Link } from './link';
 export { MovieItem } from './movieItem';
 export { MovieTitle } from './movieTitle';
 export { Preloader } from './preloader';

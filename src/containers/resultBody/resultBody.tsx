@@ -9,10 +9,8 @@ import { getMovieDetailsById, getMoviesBySearchQuery } from '../../actions';
 import { resultSelector } from '../../selectors';
 import './resultBody.scss';
 
-// TODO: movies props change
-
 interface Props {
-  movies: any;
+  movies: MoviesTypes[];
   isFetching: boolean;
   genre: string;
 }
@@ -24,7 +22,9 @@ interface MoviesTypes {
   genres: string[];
 }
 export const ResultBody = () => {
-  const { movies, isFetching } = useSelector<string, Props>(resultSelector);
+  const { movies, isFetching, genre } = useSelector<string, Props>(
+    resultSelector,
+  );
 
   const dispatch = useDispatch();
 
@@ -32,9 +32,15 @@ export const ResultBody = () => {
     'content-not-found': movies.length === 0,
     'content-films-list': movies.length > 0,
   });
+
   const router = useRouter();
-  const { value } = router.query;
+  let { value } = router.query;
+
   useEffect(() => {
+    if (value === '') {
+      value = genre;
+      dispatch(getMoviesBySearchQuery(value));
+    }
     dispatch(getMoviesBySearchQuery(value));
   }, [value]);
 
