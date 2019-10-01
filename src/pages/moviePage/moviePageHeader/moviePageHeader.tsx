@@ -11,9 +11,9 @@ import './moviePageHeader.scss';
 export const MoviePageHeader = withRouter(() => {
   const movie = useSelector(movieSelector);
   const dispatch = useDispatch();
-
-  const router = useRouter();
-  const { id } = router.query;
+  // const router = useRouter();
+  // const { id } = router.query;
+  const id = 5;
   useEffect(() => {
     dispatch(getMovieDetailsById(Number(id)));
   }, [id]);
@@ -24,7 +24,7 @@ export const MoviePageHeader = withRouter(() => {
 
       {Object.keys(movie).length && (
         <>
-          <Link href="/search">
+          <Link href="/">
             <Button type={ButtonType.searchLink} text="Search" />
           </Link>
           <MovieDetails movie={movie} />

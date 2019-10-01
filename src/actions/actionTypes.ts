@@ -14,7 +14,7 @@ export const SET_SORT_FILTER = 'SET_SORT_FILTER';
 
 // ---------- Get movies by search query
 
-interface SearchParams {
+export interface SearchParams {
   search: string | string[];
   searchBy: string;
   sortBy: string;

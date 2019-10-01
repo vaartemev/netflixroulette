@@ -21,11 +21,7 @@ export const SearchPageHeader = () => {
   const handleOnInput = (value: string): void => {
     dispatch(setSearchValue(value));
   };
-  const handleOnSearchClick = (
-    searchValue: string,
-    filter: string,
-    sort: string,
-  ): void => {
+  const handleOnSearchClick = (searchValue: string, filter: string, sort: string): void => {
     dispatch(getMoviesBySearchQuery(searchValue, filter, sort));
   };
   return (

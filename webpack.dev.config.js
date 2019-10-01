@@ -79,8 +79,8 @@ module.exports = {
       '.tsx',
       '.json',
       '.sass',
-      'scss',
-      'css',
+      '.scss',
+      '.css',
     ],
   },
 };

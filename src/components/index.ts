@@ -9,3 +9,4 @@ export { Preloader } from './preloader';
 export { Thumbnail } from './thumbnail';
 export { NoFilmsFound } from './noFilmsFound';
 export { SearchField } from './searchField';
+export { YetLoader } from './yetLoader';

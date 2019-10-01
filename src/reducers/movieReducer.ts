@@ -11,9 +11,21 @@ import {
   GET_MOVIES_BY_SEARCH_QUERY_FAILURE,
 } from '../actions';
 
-interface State {
-  movies: any;
-  movie: any;
+interface Movie {
+  id: number;
+  title: string;
+  release_date: string;
+  tagline: string;
+  poster_path: string;
+  overview: string;
+  genres: string;
+  runtime: number;
+  vote_average: number;
+}
+
+export interface State {
+  movies: Movie[];
+  movie: Movie;
   searchQuery: string;
   searchBy: string;
   sortBy: string;
@@ -35,12 +47,10 @@ export const movieReducer = (state = initialState, action: any) => {
     case GET_MOVIES_BY_SEARCH_QUERY:
       return state
         .setIn(['searchQuery'], payload.search)
-        .setIn(['sortBy'], payload.sortBy)
+        .setIn(['searchBy'], payload.searchBy)
         .setIn(['isFetching'], true);
     case GET_MOVIES_BY_SEARCH_QUERY_SUCCESS:
-      return state
-        .setIn(['movies'], payload.movies)
-        .setIn(['isFetching'], false);
+      return state.setIn(['movies'], payload.movies).setIn(['isFetching'], false);
     case GET_MOVIES_BY_SEARCH_QUERY_FAILURE:
       return state.setIn(['isFetching'], false);
     case SET_SEARCH_FILTER:

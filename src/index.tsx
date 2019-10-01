@@ -8,7 +8,7 @@ import './normalize.scss';
 
 const store = configureStore();
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <Router>
     <Provider store={store}>
       <App />

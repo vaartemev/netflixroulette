@@ -17,7 +17,7 @@ import {
 
 export const getMoviesBySearchQuery = (
   search: string | string[],
-  searchBy = 'title',
+  searchBy: string,
   sortBy = 'release_date',
   sortOrder = 'desc',
 ): GetMoviesBySearchTypes => {
@@ -32,9 +32,7 @@ export const getMoviesBySearchQuery = (
   };
 };
 
-export const getMoviesBySearchQuerySuccess = (
-  movies: [],
-): GetMoviesBySearchTypes => {
+export const getMoviesBySearchQuerySuccess = (movies: []): GetMoviesBySearchTypes => {
   return {
     type: GET_MOVIES_BY_SEARCH_QUERY_SUCCESS,
     payload: {

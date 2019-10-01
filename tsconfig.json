@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "jsx": "preserve",
     "lib": [
       "dom",
       "dom.iterable",
@@ -16,15 +17,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve"
+    "noEmit": true
   },
   "awesomeTypescriptLoaderOptions": {
-"useWebpackText": true,
-"useTranspileModule": true,
-"doTypeCheck": true,
-"forkChecker": true
-},
+    "useWebpackText": true,
+    "useTranspileModule": true,
+    "doTypeCheck": true,
+    "forkChecker": true
+  },
   "exclude": [
     "node_modules"
   ],

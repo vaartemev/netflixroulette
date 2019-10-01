@@ -16,26 +16,22 @@ const sortBy: SortTypes[] = [
   { key: 'rating', title: 'rating' },
 ];
 
-export const ResultInfo = () => {
+export const ResultInfo = ({ page }: any) => {
   const { movies, genre } = useSelector(resultSelector);
 
-  const router = useRouter();
-  const { id } = router.query;
+  // const router = useRouter();
+  // const { id } = router.query;
 
   return (
     <nav className="additional">
-      {id ? (
+      {page === 'moviePage' ? (
         <span className="founded">Movies by {genre} genre</span>
       ) : (
         <>
           <span className="founded">{movies.length} movies founded</span>
           <div className="sort">
             <span className="sort__title">Sort by</span>
-            <RadioButton
-              type={ButtonType.sort}
-              filters={sortBy}
-              filter={setSortFilter}
-            />
+            <RadioButton type={ButtonType.sort} filters={sortBy} filter={setSortFilter} />
           </div>
         </>
       )}

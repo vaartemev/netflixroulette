@@ -2,12 +2,12 @@ import React from 'react';
 import { ResultInfo, ResultBody } from '../../containers';
 import { MoviePageHeader } from './moviePageHeader';
 
-export const MoviePage = () => {
+export const MoviePage = ({ match: { params } }: any) => {
   return (
     <>
       <MoviePageHeader />
-      <ResultInfo />
-      <ResultBody />
+      <ResultInfo page="moviePage" />
+      <ResultBody params={params} />
     </>
   );
 };

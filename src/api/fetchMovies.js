@@ -5,14 +5,13 @@ import { client } from '../client';
 
 const fetchMoviesQuery = gql`
   query($searchQuery: String!) {
-    movies(searchQuery: $searchQuery)
-      @rest(type: "Movies", path: "/?{args.searchQuery}") {
+    movies(searchQuery: $searchQuery) @rest(type: "Movies", path: "/?{args.searchQuery}") {
       data
     }
   }
 `;
 
-export const fetchMovies = async params => {
+export const fetchMovies = async (params) => {
   const searchQuery = `${stringify(params)}`;
   const movies = await client.query({
     query: fetchMoviesQuery,

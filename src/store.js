@@ -6,16 +6,14 @@ import { rootSaga } from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
-console.log(process.browser);
-
 export const configureStore = () => {
   const store = createStore(
     rootReducer,
     compose(
       applyMiddleware(sagaMiddleware),
       // window.__REDUX_DEVTOOLS_EXTENSION__
-      // ? window.__REDUX_DEVTOOLS_EXTENSION__()
-      // : f => f,
+      //   ? window.__REDUX_DEVTOOLS_EXTENSION__()
+      //   : f => f,
     ),
   );
 

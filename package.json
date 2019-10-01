@@ -65,6 +65,8 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@types/query-string": "^6.3.0",
+    "@types/styled-components": "^4.1.19",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link": "^1.2.12",
@@ -90,6 +92,7 @@
     "redux": "^4.0.4",
     "redux-immutable": "^4.0.0",
     "redux-saga": "^1.0.5",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "styled-components": "^4.3.2"
   }
 }

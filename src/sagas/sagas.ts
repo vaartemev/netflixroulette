@@ -7,10 +7,21 @@ import {
   getMovieDetailsByIdSuccess,
   getMovieDetailsByIdFailure,
   getMoviesBySearchQuery,
+  SearchParams,
 } from '../actions';
 import { fetchMovieById, fetchMovies } from '../api';
 
-export function* getMoviesBySearch(action) {
+interface Payload {
+  payload: {
+    id: string;
+  };
+}
+
+interface Action {
+  payload: SearchParams;
+}
+
+export function* getMoviesBySearch(action: Action) {
   try {
     const movies = yield call(fetchMovies, action.payload);
     yield put(getMoviesBySearchQuerySuccess(movies.data));
@@ -20,10 +31,10 @@ export function* getMoviesBySearch(action) {
 }
 
 export function* watchGetQuery() {
-  yield takeEvery(GET_MOVIES_BY_SEARCH_QUERY, getMoviesBySearch);
+  yield takeEvery(GET_MOVIES_BY_SEARCH_QUERY as any, getMoviesBySearch);
 }
 
-export function* getMovieDetails({ payload: { id } }) {
+export function* getMovieDetails({ payload: { id } }: Payload) {
   try {
     const movie = yield call(fetchMovieById, id);
     const genre = movie.genres[0];
@@ -35,7 +46,7 @@ export function* getMovieDetails({ payload: { id } }) {
 }
 
 export function* watchGetMovieById() {
-  yield takeEvery(GET_MOVIE_DETAILS_BY_ID, getMovieDetails);
+  yield takeEvery(GET_MOVIE_DETAILS_BY_ID as any, getMovieDetails);
 }
 
 export function* rootSaga() {
