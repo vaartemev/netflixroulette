@@ -18,7 +18,7 @@ const fetchMovieByIdQuery = gql`
   }
 `;
 
-export const fetchMovieById = async id => {
+export const fetchMovieById = async (id) => {
   const movie = await client.query({
     query: fetchMovieByIdQuery,
     variables: { id: String(id) },

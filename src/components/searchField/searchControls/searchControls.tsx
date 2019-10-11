@@ -33,7 +33,6 @@ export const SearchControls = ({
   sortFilter,
   handleOnSearchClick,
 }: Props) => {
-  console.log(searchFilter);
   return (
     <div className="filters">
       <div className="filters__title">Search by</div>

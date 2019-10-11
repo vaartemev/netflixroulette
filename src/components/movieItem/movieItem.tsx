@@ -14,14 +14,7 @@ interface Props {
   handleOnClick: () => void;
 }
 
-export const MovieItem = ({
-  id,
-  src,
-  title,
-  year,
-  genre,
-  handleOnClick,
-}: Props) => {
+export const MovieItem = ({ id, src, title, year, genre, handleOnClick }: Props) => {
   return (
     <Link href={`/movie/${id}`}>
       <div className="movie" onClick={handleOnClick} role="link" tabIndex={0}>

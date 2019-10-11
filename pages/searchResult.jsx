@@ -3,13 +3,22 @@ import React from 'react';
 import { SearchPage } from '../src/pages';
 import { Footer } from '../src/components';
 
-const Main = () => {
+const SearchResult = (props) => {
   return (
     <>
-      <SearchPage />
+      <SearchPage match={props} />
       <Footer />
     </>
   );
 };
 
-export default Main;
+SearchResult.getInitialProps = (props) => {
+  let params;
+
+  if (typeof props.req !== 'undefined') {
+    params = props.req.params;
+  }
+  return { params };
+};
+
+export default SearchResult;

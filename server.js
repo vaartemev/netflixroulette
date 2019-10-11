@@ -14,16 +14,10 @@ app.prepare().then(() => {
   });
 
   server.get('/searchResult/:value', (req, res) => {
-    return res.render(req, res, '/searchResult', {
-      searchValue: req.params.value,
+    return app.render(req, res, '/searchResult', {
+      value: req.params.value,
     });
   });
-
-  // server.get('/search', (req, res) => {
-  //   return app.render(req, res, '/searchResult', {
-  //     searchValue: req.params.value,
-  //   });
-  // });
 
   server.get('/movie/:id', (req, res) => {
     return app.render(req, res, '/movie', { id: req.query.id });
@@ -33,7 +27,7 @@ app.prepare().then(() => {
     return handleNextRequest(req, res);
   });
 
-  server.listen(PORT, err => {
+  server.listen(PORT, (err) => {
     if (err) throw err;
     console.log(`> It's working on http://localhost:${PORT}`);
   });

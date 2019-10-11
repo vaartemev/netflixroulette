@@ -1,19 +1,26 @@
 import React, { useEffect } from 'react';
-import { useRouter, withRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { MovieDetails } from './movieDetails';
 import { Logo, Button, ButtonType, Link } from '../../../components';
-
 import { getMovieDetailsById } from '../../../actions';
 import { movieSelector } from '../../../selectors';
+
 import './moviePageHeader.scss';
 
-export const MoviePageHeader = withRouter(() => {
+interface Params {
+  params: {
+    id: string;
+  };
+}
+
+export const MoviePageHeader = ({ params }: Params) => {
   const movie = useSelector(movieSelector);
+
   const dispatch = useDispatch();
-  // const router = useRouter();
-  // const { id } = router.query;
-  const id = 5;
+
+  const { id } = params;
+
   useEffect(() => {
     dispatch(getMovieDetailsById(Number(id)));
   }, [id]);
@@ -32,4 +39,4 @@ export const MoviePageHeader = withRouter(() => {
       )}
     </div>
   );
-});
+};
